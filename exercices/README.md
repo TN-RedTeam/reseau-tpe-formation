@@ -20,5 +20,13 @@ Un exercice par module de cours. **Fais d'abord le cours**, puis l'exercice.
 | 10 | [VPN et accès distant](10-vpn-acces-distant.md) | [corrigé](corriges/10-vpn-acces-distant.md) |
 | 11 | [Diagnostic et dépannage](11-diagnostic-depannage.md) | [corrigé](corriges/11-diagnostic-depannage.md) |
 | 12 | 🎁 [La téléphonie VoIP](12-voip-telephonie.md) *(bonus)* | [corrigé](corriges/12-voip-telephonie.md) |
+| 13 | 🏢 [Active Directory & domaine](13-active-directory-domaine.md) | [corrigé](corriges/13-active-directory-domaine.md) |
+| 14 | 🏢 [VLAN & segmentation](14-vlan-segmentation.md) | [corrigé](corriges/14-vlan-segmentation.md) |
+| 15 | 🏢 [Le serveur d'entreprise](15-serveur-entreprise.md) | [corrigé](corriges/15-serveur-entreprise.md) |
+| 16 | 🏢 [Le switch managé](16-switch-manage.md) | [corrigé](corriges/16-switch-manage.md) |
+| 17 | [L'onduleur (UPS)](17-onduleur-ups.md) | [corrigé](corriges/17-onduleur-ups.md) |
+| 18 | ☁️ [Le cloud & le SaaS](18-cloud-et-saas.md) | [corrigé](corriges/18-cloud-et-saas.md) |
+| 19 | ☁️ [Microsoft 365](19-microsoft-365.md) | [corrigé](corriges/19-microsoft-365.md) |
+| 20 | ⚖️ [Le RGPD pour TPE/PME](20-rgpd-tpe-pme.md) | [corrigé](corriges/20-rgpd-tpe-pme.md) |
 
 ⬅️ [Retour au sommaire](../README.md)

@@ -134,6 +134,101 @@ lentement, 5 GHz va plus vite mais moins loin.
 
 ---
 
+## 🏢 Termes PME, infogérance & cloud
+
+**Active Directory (AD)** — La « réception centrale » d'une PME : gère de façon centralisée
+les comptes utilisateurs et les ordinateurs d'un domaine.
+
+**Agent (RMM)** — Petit programme installé sur une machine pour la superviser et la gérer à
+distance.
+
+**Audit IT** — Le « bilan de santé » complet de l'informatique d'un client avant de
+proposer un contrat.
+
+**Contrôleur de domaine** — Le serveur qui fait tourner Active Directory.
+
+**DPO** — Délégué à la protection des données : responsable de la conformité RGPD dans une
+organisation.
+
+**Entra ID (ex-Azure AD)** — La version cloud d'Active Directory, liée à Microsoft 365.
+
+**GPO** — *Group Policy Object* : une règle appliquée automatiquement à tout un parc depuis
+Active Directory.
+
+**Helpdesk** — Centre d'assistance qui centralise les demandes des utilisateurs sous forme
+de tickets.
+
+**Hyperviseur** — Le logiciel qui fait tourner plusieurs machines virtuelles sur un même
+serveur physique (ex : Proxmox, Hyper-V, VMware).
+
+**IaaS** — *Infrastructure as a Service* : louer des machines/serveurs dans le cloud.
+
+**Infogérance** — Prendre en charge, dans la durée, la gestion informatique d'une entreprise
+(souvent via un contrat mensuel).
+
+**MFA / 2FA** — Authentification à plusieurs facteurs : une 2ᵉ preuve d'identité en plus du
+mot de passe.
+
+**Microsoft 365** — La suite bureautique + messagerie + collaboration de Microsoft, en
+abonnement cloud.
+
+**OneDrive** — Le stockage en ligne **personnel** d'un utilisateur M365.
+
+**On-premise (local)** — Des services hébergés sur le matériel du client, par opposition au
+cloud.
+
+**Onboarding** — La prise en main d'un nouveau client (récupérer les accès, monter le
+dossier, déployer les outils).
+
+**Onduleur (UPS)** — Batterie de secours qui permet un arrêt propre des équipements lors
+d'une coupure de courant.
+
+**PaaS** — *Platform as a Service* : louer une plateforme pour développer/héberger des
+applications.
+
+**PoE** — *Power over Ethernet* : alimentation électrique transportée par le câble réseau.
+
+**PRA / PCA** — Plan de Reprise / de Continuité d'Activité : comment repartir après un
+sinistre informatique.
+
+**QoS** — *Quality of Service* : priorité donnée à un trafic (ex : la voix) sur le réseau.
+
+**Reporting** — Le compte-rendu périodique remis au client (ce qui a été fait, l'état du
+parc).
+
+**RGPD** — Règlement européen sur la protection des données personnelles.
+
+**RMM** — *Remote Monitoring and Management* : l'outil central de l'infogéreur pour
+superviser et gérer les machines à distance.
+
+**SaaS** — *Software as a Service* : un logiciel prêt à l'emploi, utilisé via internet (ex :
+Microsoft 365, Gmail).
+
+**SharePoint** — Les espaces de fichiers **partagés** d'équipe dans Microsoft 365.
+
+**SLA** — *Service Level Agreement* : les délais garantis par contrat (prise en compte,
+rétablissement).
+
+**Softphone** — Une application qui transforme un PC/smartphone en téléphone (VoIP).
+
+**Switch managé** — Un switch configurable (VLAN, QoS, supervision), par opposition au switch
+« non managé » basique.
+
+**Ticket** — Une demande/incident client tracé dans le helpdesk (numéro, priorité, statut).
+
+**Trunk SIP** — La « ligne » téléphonique VoIP fournie par un opérateur.
+
+**Virtualisation** — Faire tourner plusieurs serveurs virtuels (VM) sur une seule machine
+physique.
+
+**VLAN** — Réseau local virtuel : découpe un réseau physique en plusieurs réseaux isolés.
+
+**VM (machine virtuelle)** — Un ordinateur « dans » un ordinateur, créé par virtualisation.
+
+**VoIP** — *Voice over IP* : la téléphonie qui passe par le réseau internet.
+
+---
+
 > 💡 Un terme manque ? Note-le, et on l'ajoutera. Un glossaire, ça vit !
 
 ⬅️ [Retour au sommaire](README.md)

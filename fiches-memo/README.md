@@ -11,5 +11,7 @@ imprimer et coller au mur. 📌
 | [Dépannage express](fiche-depannage.md) | La méthode quand « ça marche pas » |
 | [Sécurité](fiche-securite.md) | Les réflexes à ne jamais oublier |
 | [Sauvegarde 3-2-1](fiche-sauvegarde.md) | La règle d'or des sauvegardes |
+| [Cycle client infogérance](fiche-infogerance.md) | Du 1ᵉʳ contact au contrat mensuel |
+| [Repères PME](fiche-pme.md) | AD, VLAN, serveur, switch managé, onduleur |
 
 ⬅️ [Retour au sommaire](../README.md)
