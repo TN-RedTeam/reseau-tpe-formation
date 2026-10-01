@@ -96,7 +96,8 @@ presse : mieux vaut 1 session bien comprise que 3 survolées.
 - [ ] **J33** — Exploitation `01` & `02` : supervision/RMM, prise à distance
 - [ ] **J34** — Exploitation `03` & `04` : ticketing, maintenance préventive
 - [ ] **J35** — Exploitation `05` & `06` : documentation, accès & mots de passe
-- [ ] **J36** — 🎯 Simuler un client de A à Z avec les modèles (audit → contrat)
+- [ ] **J36** — 🎯 Étudier le [cas pratique fil rouge](cas-pratique/) (client suivi de A à Z)
+- [ ] **J37** — 🎯 Rejouer le scénario avec les modèles vierges sur un client imaginaire
 
 > 💡 Astuce : tu n'es pas obligé de suivre le rythme « 1 jour = 1 session ».
 > Prends ton temps. L'important, c'est de **cocher dans l'ordre**.
@@ -150,6 +151,9 @@ du premier contact au contrat mensuel**, deux sections dédiées :
 - 🛠️ [**Exploitation au quotidien**](exploitation/) — supervision/RMM, prise en main à
   distance, ticketing, maintenance préventive, documentation client, gestion des
   accès (+ checklists et modèles).
+- 🎯 [**Cas pratique fil rouge**](cas-pratique/) — un client fictif (cabinet comptable
+  Durand) suivi **de l'audit au contrat mensuel**, avec **tous les modèles remplis** en
+  exemple. Le meilleur moyen de voir la théorie en action.
 
 ---
 
