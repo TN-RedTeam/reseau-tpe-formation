@@ -28,6 +28,23 @@ Quand « ça ne marche pas », remonte la chaîne, **du plus proche au plus loin
 
 Teste **dans cet ordre**. Le premier « non » t'indique où est le problème. 🎯
 
+En **Mermaid**, l'arbre de décision devient très parlant :
+
+```mermaid
+flowchart TD
+    START([Ça ne marche pas]) --> Q1{Câble / Wi-Fi<br/>connecté ?}
+    Q1 -->|Non| F1[🔌 Rebrancher / vérifier le câble]
+    Q1 -->|Oui| Q2{A une IP valide ?<br/>ipconfig}
+    Q2 -->|Non / 169.254.x.x| F2[🎫 Problème DHCP]
+    Q2 -->|Oui| Q3{Ping box 192.168.1.1 ?}
+    Q3 -->|Non| F3[📡 Souci réseau local / box]
+    Q3 -->|Oui| Q4{Ping 8.8.8.8 ?}
+    Q4 -->|Non| F4[🌐 Souci sortie internet / box]
+    Q4 -->|Oui| Q5{Ping google.com ?}
+    Q5 -->|Non| F5[📇 Problème DNS]
+    Q5 -->|Oui| OK([✅ Le réseau est sain])
+```
+
 ---
 
 ## 🧰 Les 4 outils du dépanneur (sous Windows, dans `cmd`)

@@ -41,6 +41,18 @@ box, il l'étend.
    PC PC PC NAS
 ```
 
+En **Mermaid**, on voit bien la hiérarchie box → switch → appareils :
+
+```mermaid
+flowchart TD
+    NET([🌐 Internet]) --- BOX[Box / Routeur<br/>le gardien]
+    BOX --- SW[Switch<br/>la multiprise réseau]
+    SW --- PC1[💻 PC]
+    SW --- PC2[💻 PC]
+    SW --- PC3[💻 PC]
+    SW --- NAS[💾 NAS]
+```
+
 ---
 
 ## 🔑 Deux adresses, deux "côtés"

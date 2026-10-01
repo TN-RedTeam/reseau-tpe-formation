@@ -58,6 +58,18 @@ Câble ou Wi-Fi, tout le monde finit relié à la **box**. C'est ça, le réseau
             🖨️────┘            💻 Portable
 ```
 
+Le **même réseau en Mermaid**, où l'on distingue le filaire du sans-fil :
+
+```mermaid
+flowchart TD
+    NET([🌐 Internet]) --- BOX[Box]
+    BOX ---|câble| PC[💻 PC fixe]
+    BOX ---|câble| NAS[💾 NAS]
+    BOX ---|câble| IMP[🖨️ Imprimante]
+    BOX -. Wi-Fi .- TEL[📱 Téléphone]
+    BOX -. Wi-Fi .- LAP[💻 Portable]
+```
+
 Les appareils en **câble** ou en **Wi-Fi** sont **sur le même réseau local** : ils
 peuvent donc se parler (partager fichiers, imprimante…). On verra ça au cours 06.
 
