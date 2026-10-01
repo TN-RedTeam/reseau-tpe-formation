@@ -13,5 +13,6 @@ imprimer et coller au mur. 📌
 | [Sauvegarde 3-2-1](fiche-sauvegarde.md) | La règle d'or des sauvegardes |
 | [Cycle client infogérance](fiche-infogerance.md) | Du 1ᵉʳ contact au contrat mensuel |
 | [Repères PME](fiche-pme.md) | AD, VLAN, serveur, switch managé, onduleur |
+| [Commandes d'administration](fiche-commandes-admin.md) | PowerShell & Linux côte à côte |
 
 ⬅️ [Retour au sommaire](../README.md)

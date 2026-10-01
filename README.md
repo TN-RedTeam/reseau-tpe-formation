@@ -99,6 +99,18 @@ presse : mieux vaut 1 session bien comprise que 3 survolées.
 - [ ] **J36** — 🎯 Étudier le [cas pratique fil rouge](cas-pratique/) (client suivi de A à Z)
 - [ ] **J37** — 🎯 Rejouer le scénario avec les modèles vierges sur un client imaginaire
 
+### 🧑‍💼 Semaine 6-7 — Administration (pratique en labo virtuel)
+
+- [ ] **J38** — Admin `01` & `02` : c'est quoi administrer, comptes/groupes/droits
+- [ ] **J39** — Admin `03` + [TP01](administration/tp/tp01-labo-virtuel.md) : labo virtuel
+- [ ] **J40** — [TP02](administration/tp/tp02-installer-windows-server.md) : Windows Server + domaine
+- [ ] **J41** — Admin `04`/`05` + [TP03](administration/tp/tp03-ad-utilisateurs-gpo.md) : AD & GPO
+- [ ] **J42** — Admin `06` + [TP04](administration/tp/tp04-serveur-fichiers-ntfs.md) : fichiers & NTFS
+- [ ] **J43** — Admin `07` + [TP05](administration/tp/tp05-ubuntu-server-ssh.md) : Linux & SSH
+- [ ] **J44** — Admin `08` & `09` : DHCP/DNS serveur, logs & supervision
+- [ ] **J45** — Admin `10` : MAJ, sauvegarde & sécurisation serveur
+- [ ] **J46** — 🎓 [TP06](administration/tp/tp06-scenario-admin.md) : scénario d'administration complet
+
 > 💡 Astuce : tu n'es pas obligé de suivre le rythme « 1 jour = 1 session ».
 > Prends ton temps. L'important, c'est de **cocher dans l'ordre**.
 
@@ -154,6 +166,10 @@ du premier contact au contrat mensuel**, deux sections dédiées :
 - 🎯 [**Cas pratique fil rouge**](cas-pratique/) — un client fictif (cabinet comptable
   Durand) suivi **de l'audit au contrat mensuel**, avec **tous les modèles remplis** en
   exemple. Le meilleur moyen de voir la théorie en action.
+- 🧑‍💼 [**Administration réseau & serveur**](administration/) — le track **pratique** :
+  comptes/droits, Windows Server & Active Directory, GPO, droits NTFS, Linux serveur
+  (SSH), DHCP/DNS serveur, logs, sauvegarde & sécurisation (+ **6 TP en machines
+  virtuelles gratuites**).
 
 ---
 

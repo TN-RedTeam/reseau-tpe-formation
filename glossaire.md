@@ -229,6 +229,73 @@ physique.
 
 ---
 
+## 🧑‍💼 Termes d'administration (réseau & serveur)
+
+**apt / dnf** — Le « magasin d'applications » en ligne de commande sous Linux (installer et
+mettre à jour des logiciels).
+
+**bash / shell** — L'interpréteur de commandes de Linux (là où on tape les commandes dans le
+terminal).
+
+**chmod / chown** — Commandes Linux pour régler les droits d'un fichier (`chmod`) et changer
+son propriétaire (`chown`).
+
+**daemon / service** — Un programme qui tourne en arrière-plan sur un serveur (SSH, base de
+données, serveur web…).
+
+**durcissement (hardening)** — Réduire la surface d'attaque d'un serveur (désactiver
+l'inutile, resserrer les accès).
+
+**Gestionnaire de serveur** — L'interface principale d'administration de Windows Server
+(ajouter des rôles, gérer).
+
+**GPMC** — Console de gestion des stratégies de groupe (GPO) sous Windows.
+
+**héritage (droits)** — La transmission automatique des droits d'un dossier parent vers ses
+sous-dossiers.
+
+**journalctl** — La commande Linux pour consulter les journaux (logs) du système.
+
+**logs (journaux)** — L'enregistrement de tout ce qui se passe sur une machine (les
+« caméras de surveillance »).
+
+**MMC** — Les consoles de gestion Microsoft (ex : ADUC pour les utilisateurs AD).
+
+**NTFS (droits)** — Les permissions attachées à un dossier/fichier Windows (qui peut lire,
+modifier…).
+
+**OU (unité d'organisation)** — Un « tiroir » dans Active Directory pour ranger utilisateurs
+et ordinateurs (et cibler des GPO).
+
+**patch management** — La gestion organisée des mises à jour (planifiées, testées,
+reportées).
+
+**PCA** — Plan de Continuité d'Activité : continuer à fonctionner malgré un sinistre.
+
+**PowerShell** — Le langage de ligne de commande d'administration de Windows.
+
+**RDP** — *Remote Desktop Protocol* : voir et piloter le bureau d'une machine Windows à
+distance.
+
+**rôle (serveur)** — Un métier confié à un serveur Windows (AD, DNS, DHCP, fichiers…).
+
+**RPO** — *Recovery Point Objective* : combien de données on accepte de perdre (fraîcheur de
+la dernière sauvegarde).
+
+**RTO** — *Recovery Time Objective* : en combien de temps on redémarre après un sinistre.
+
+**Server Core** — Windows Server sans interface graphique (tout en ligne de commande).
+
+**SSH** — *Secure Shell* : la console sécurisée pour administrer un serveur Linux à distance.
+
+**sudo** — Sous Linux, exécuter une commande avec les droits d'administrateur.
+
+**systemctl** — La commande Linux pour piloter les services (démarrer, arrêter, activer).
+
+**WSL** — *Windows Subsystem for Linux* : un terminal Linux intégré à Windows 10/11.
+
+---
+
 > 💡 Un terme manque ? Note-le, et on l'ajoutera. Un glossaire, ça vit !
 
 ⬅️ [Retour au sommaire](README.md)
