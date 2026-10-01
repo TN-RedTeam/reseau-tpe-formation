@@ -1,0 +1,139 @@
+# 📖 Glossaire
+
+Tous les termes techniques de la formation, chacun expliqué **en une phrase
+simple**. Un mot t'échappe ? Il est là. (Classé par ordre alphabétique.)
+
+---
+
+**Adresse IP** — L'adresse postale d'un appareil sur le réseau (ex : `192.168.1.25`).
+
+**Adresse MAC** — Le numéro de série unique « gravé » dans une carte réseau (comme
+le numéro de châssis d'une voiture).
+
+**Antivirus** — Un logiciel qui détecte et bloque les programmes malveillants.
+
+**Bande passante** — La « largeur du tuyau » : la quantité de données qui peut
+passer par seconde.
+
+**Box** — Le boîtier de ton fournisseur d'accès qui fait office de routeur (le
+« gardien » du réseau).
+
+**Câble Ethernet** — Le câble réseau qu'on branche pour relier un appareil à la box
+(la « porte », rapide et fiable).
+
+**Chiffrement** — Transformer des données en charabia illisible pour tout le monde
+sauf celui qui a la clé.
+
+**Cloud** — Des serveurs sur internet où l'on stocke des données « ailleurs » (ex :
+pour une sauvegarde hors site).
+
+**Client** — L'appareil qui demande un service (ton PC qui demande une page web).
+
+**DHCP** — Le « gardien de parking » qui donne automatiquement une adresse IP à
+chaque appareil qui se connecte.
+
+**DNS** — L'annuaire qui traduit un nom de site (google.com) en adresse IP.
+
+**Ethernet** — La technologie des réseaux locaux filaires (le câble réseau).
+
+**Pare-feu (firewall)** — Le « vigile » qui filtre ce qui entre et sort du réseau.
+
+**FAI (Fournisseur d'Accès à Internet)** — L'entreprise qui te fournit internet
+(Orange, Free, SFR…).
+
+**Gateway (passerelle)** — La porte de sortie vers internet : l'adresse de la box
+(souvent `192.168.1.1`).
+
+**GNS3** — Un simulateur de réseau avancé (alternative à Packet Tracer).
+
+**IP (voir Adresse IP)** — Le système d'adressage des appareils sur un réseau.
+
+**IPv4** — La version courante des adresses IP : 4 nombres séparés par des points.
+
+**IPv6** — La nouvelle version des adresses IP, plus longue, créée car les IPv4
+viennent à manquer.
+
+**LAN (réseau local)** — Ton réseau « à la maison » ou « au bureau » (ton immeuble).
+
+**Masque de sous-réseau** — Le nombre (ex : `255.255.255.0`) qui indique où s'arrête
+le « quartier » dans une adresse IP.
+
+**NAS** — Une armoire à fichiers du réseau, toujours allumée (*Network Attached
+Storage*).
+
+**Packet Tracer** — Le simulateur gratuit de Cisco pour construire des réseaux
+virtuels et s'entraîner.
+
+**Pare-feu (voir Firewall)** — Le vigile du réseau.
+
+**Passerelle (voir Gateway)** — La porte vers internet.
+
+**Phishing (hameçonnage)** — Un email/message piégé qui essaie de te faire cliquer
+ou donner un mot de passe.
+
+**Ping** — Un petit « coucou, tu es là ? » envoyé à un appareil pour voir s'il
+répond.
+
+**Port (réseau)** — Un « guichet » numéroté sur un appareil, dédié à un type de
+service (ex : le web passe souvent par le port 80 ou 443).
+
+**Port (physique)** — La prise où l'on branche un câble réseau.
+
+**Raspberry Pi** — Un mini-ordinateur bon marché (~50 €), pratique pour s'entraîner.
+
+**RAID** — Une technique qui fait travailler plusieurs disques ensemble ; le RAID
+miroir écrit tout en double pour survivre à la panne d'un disque.
+
+**RAID ≠ sauvegarde** — Rappel essentiel : le RAID protège d'une panne disque, pas
+d'un virus, d'un vol ou d'une erreur.
+
+**Redirection de port** — Ouvrir une « porte » sur la box pour qu'un service interne
+soit joignable depuis internet (à éviter, préférer un VPN).
+
+**Réseau** — Plusieurs appareils reliés pour échanger des informations.
+
+**Réseau invité** — Un Wi-Fi séparé pour les visiteurs, qui n'accède pas à tes
+fichiers.
+
+**Routeur** — L'appareil qui relie ton réseau à internet et oriente les informations
+(le « gardien »). En TPE, c'est la box.
+
+**Sauvegarde** — Une copie séparée de tes données, rangée ailleurs (le « 3-2-1 »).
+
+**Serveur** — Un appareil qui rend un service aux autres (fichiers, web, DHCP…).
+
+**Serveur de fichiers** — Un serveur dont le rôle est de stocker et partager des
+fichiers (souvent un NAS).
+
+**SSID** — Le nom d'un réseau Wi-Fi, celui qui s'affiche dans la liste.
+
+**Switch** — Une « multiprise réseau » qui relie des appareils entre eux (n'ouvre
+pas sur internet, contrairement au routeur).
+
+**Tailscale** — Un outil moderne et simple pour monter un VPN.
+
+**TrueNAS / OpenMediaVault** — Des logiciels gratuits pour transformer un vieux PC en
+NAS.
+
+**VPN** — Un tunnel privé et chiffré qui relie un appareil distant à ton réseau (pour
+le télétravail notamment).
+
+**Wi-Fi** — La connexion réseau sans fil (la « fenêtre », pratique mais plus
+variable que le câble).
+
+**WireGuard** — Une technologie de VPN moderne, rapide et sécurisée.
+
+**WPA2 / WPA3** — Les bons niveaux de chiffrement du Wi-Fi (à utiliser ; éviter le
+vieux WEP).
+
+**2FA (double authentification)** — Une 2ᵉ preuve d'identité (code par SMS/appli) en
+plus du mot de passe ; le réflexe sécurité le plus efficace.
+
+**2,4 GHz / 5 GHz** — Les deux « routes » du Wi-Fi : 2,4 GHz va plus loin mais plus
+lentement, 5 GHz va plus vite mais moins loin.
+
+---
+
+> 💡 Un terme manque ? Note-le, et on l'ajoutera. Un glossaire, ça vit !
+
+⬅️ [Retour au sommaire](README.md)
