@@ -77,6 +77,27 @@ presse : mieux vaut 1 session bien comprise que 3 survolées.
 
 - [ ] **Bonus** — Cours `12` : la téléphonie VoIP + exercice 12
 
+### 🏢 Semaine 4 — Monter en PME (technique)
+
+- [ ] **J22** — Cours `13` : Active Directory & domaine + exercice 13
+- [ ] **J23** — Cours `14` : VLAN & segmentation + exercice 14
+- [ ] **J24** — Cours `15` : le serveur d'entreprise + exercice 15
+- [ ] **J25** — Cours `16` : le switch managé + exercice 16
+- [ ] **J26** — Cours `17` : l'onduleur (UPS) + exercice 17
+- [ ] **J27** — Cours `18` : le cloud & le SaaS + exercice 18
+- [ ] **J28** — Cours `19` : Microsoft 365 + exercice 19
+- [ ] **J29** — Cours `20` : le RGPD pour TPE/PME + exercice 20
+
+### 💼 Semaine 5 — Devenir infogéreur (le métier)
+
+- [ ] **J30** — Infogérance `01` à `03` : contact, audit, rapport & devis
+- [ ] **J31** — Infogérance `04` & `05` : contrat mensuel, SLA, tarification
+- [ ] **J32** — Infogérance `06` : onboarding + prendre en main les modèles
+- [ ] **J33** — Exploitation `01` & `02` : supervision/RMM, prise à distance
+- [ ] **J34** — Exploitation `03` & `04` : ticketing, maintenance préventive
+- [ ] **J35** — Exploitation `05` & `06` : documentation, accès & mots de passe
+- [ ] **J36** — 🎯 Simuler un client de A à Z avec les modèles (audit → contrat)
+
 > 💡 Astuce : tu n'es pas obligé de suivre le rythme « 1 jour = 1 session ».
 > Prends ton temps. L'important, c'est de **cocher dans l'ordre**.
 
@@ -97,10 +118,38 @@ presse : mieux vaut 1 session bien comprise que 3 survolées.
 11. [Diagnostic et dépannage](cours/11-diagnostic-depannage/)
 12. 🎁 [La téléphonie VoIP](cours/12-voip-telephonie/) *(module bonus)*
 
+**🏢 Niveau PME (passer de la TPE à la PME) :**
+
+13. [Active Directory & le domaine](cours/13-active-directory-domaine/)
+14. [VLAN & segmentation réseau](cours/14-vlan-segmentation/)
+15. [Le serveur d'entreprise](cours/15-serveur-entreprise/)
+16. [Le switch managé](cours/16-switch-manage/)
+17. [L'onduleur (UPS)](cours/17-onduleur-ups/)
+
+**☁️ Cloud & conformité :**
+
+18. [Le cloud & le SaaS](cours/18-cloud-et-saas/)
+19. [Microsoft 365 (et Google Workspace)](cours/19-microsoft-365/)
+20. [Le RGPD pour TPE/PME](cours/20-rgpd-tpe-pme/)
+
 > 💡 Certains cours contiennent des **schémas Mermaid** (dessins générés
 > automatiquement par GitHub) en plus des schémas ASCII. Tu les vois directement
 > en ouvrant le cours sur GitHub ; dans VS Code, ils s'affichent dans l'aperçu
 > Markdown (`Ctrl+Shift+V`).
+
+---
+
+## 💼 Devenir infogéreur (le métier)
+
+La technique, c'est la moitié du chemin. Pour **gérer l'IT de plusieurs TPE/PME,
+du premier contact au contrat mensuel**, deux sections dédiées :
+
+- 💼 [**Métier d'infogérance**](infogerance/) — prospection, audit, devis, **contrat
+  mensuel & SLA**, tarification, onboarding (+ modèles prêts à remplir : audit,
+  contrat, devis, fiche d'intervention…).
+- 🛠️ [**Exploitation au quotidien**](exploitation/) — supervision/RMM, prise en main à
+  distance, ticketing, maintenance préventive, documentation client, gestion des
+  accès (+ checklists et modèles).
 
 ---
 
