@@ -73,6 +73,10 @@ presse : mieux vaut 1 session bien comprise que 3 survolées.
 - [ ] **J20** — `bac-a-sable/tp/tp06` : le grand scénario de panne
 - [ ] **J21** — 🎉 Bilan : relire toutes les fiches-mémo, tu es prêt !
 
+### 🎁 Bonus (quand tu veux, après le parcours)
+
+- [ ] **Bonus** — Cours `12` : la téléphonie VoIP + exercice 12
+
 > 💡 Astuce : tu n'es pas obligé de suivre le rythme « 1 jour = 1 session ».
 > Prends ton temps. L'important, c'est de **cocher dans l'ordre**.
 
@@ -91,6 +95,12 @@ presse : mieux vaut 1 session bien comprise que 3 survolées.
 9. [La sécurité de base](cours/09-securite-de-base/)
 10. [VPN et accès distant](cours/10-vpn-acces-distant/)
 11. [Diagnostic et dépannage](cours/11-diagnostic-depannage/)
+12. 🎁 [La téléphonie VoIP](cours/12-voip-telephonie/) *(module bonus)*
+
+> 💡 Certains cours contiennent des **schémas Mermaid** (dessins générés
+> automatiquement par GitHub) en plus des schémas ASCII. Tu les vois directement
+> en ouvrant le cours sur GitHub ; dans VS Code, ils s'affichent dans l'aperçu
+> Markdown (`Ctrl+Shift+V`).
 
 ---
 

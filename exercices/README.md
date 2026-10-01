@@ -19,5 +19,6 @@ Un exercice par module de cours. **Fais d'abord le cours**, puis l'exercice.
 | 09 | [La sécurité de base](09-securite-de-base.md) | [corrigé](corriges/09-securite-de-base.md) |
 | 10 | [VPN et accès distant](10-vpn-acces-distant.md) | [corrigé](corriges/10-vpn-acces-distant.md) |
 | 11 | [Diagnostic et dépannage](11-diagnostic-depannage.md) | [corrigé](corriges/11-diagnostic-depannage.md) |
+| 12 | 🎁 [La téléphonie VoIP](12-voip-telephonie.md) *(bonus)* | [corrigé](corriges/12-voip-telephonie.md) |
 
 ⬅️ [Retour au sommaire](../README.md)

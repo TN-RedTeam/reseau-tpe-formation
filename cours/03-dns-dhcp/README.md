@@ -75,6 +75,20 @@ Quand ton PC se connecte, en quelques secondes et sans que tu fasses rien :
 Résultat : ton PC a une adresse **et** sait traduire les noms de sites. Prêt à
 surfer. ✨
 
+Le tout, en **Mermaid**, se lit comme une petite conversation :
+
+```mermaid
+sequenceDiagram
+    participant PC as 💻 Ton PC
+    participant DHCP as 🎫 DHCP (box)
+    participant DNS as 📇 DNS (annuaire)
+    PC->>DHCP: Bonjour, j'ai besoin d'une adresse !
+    DHCP-->>PC: Tiens, prends 192.168.1.25 (+ DNS à utiliser)
+    PC->>DNS: C'est quoi l'IP de google.com ?
+    DNS-->>PC: 142.250.179.100
+    Note over PC: J'ai une adresse ET je sais traduire → je surfe !
+```
+
 ---
 
 ## ✅ Ce qu'il faut retenir

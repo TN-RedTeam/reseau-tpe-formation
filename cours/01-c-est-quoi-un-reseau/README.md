@@ -45,6 +45,17 @@ Voici à quoi ressemble un réseau de TPE tout simple :
      💻 PC Alice  💻 PC Bob  🖨️ Impr.  💾 NAS
 ```
 
+Et le **même schéma en Mermaid** (GitHub l'affiche en vrai dessin) :
+
+```mermaid
+flowchart TD
+    NET([🌐 Internet]) --- BOX[Box / Routeur]
+    BOX --- A[💻 PC Alice]
+    BOX --- B[💻 PC Bob]
+    BOX --- P[🖨️ Imprimante]
+    BOX --- N[💾 NAS]
+```
+
 Tout le monde est relié à la **box** (le routeur), qui est le **point central**.
 C'est elle qui fait le lien entre les appareils **et** avec internet.
 
