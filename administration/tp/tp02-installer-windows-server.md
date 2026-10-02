@@ -19,7 +19,8 @@ et télécharge l'**ISO**.
 - Dans VirtualBox : **Nouvelle** → nom `SRV01`.
 - Type : Microsoft Windows, Version : Windows Server (64-bit).
 - RAM : **4096 Mo** (4 Go) · Disque : **40 Go**.
-- Réseau : **Réseau interne** nommé `labo` (pour relier les futures VM entre elles).
+- Réseau (comme vu au [TP01](tp01-labo-virtuel.md#5-le-réseau-du-labo--à-lire-attentivement-)) : **2 cartes** →
+  **Carte 1 = NAT** (internet) et **Carte 2 = Réseau interne nommé `LAB`** (le réseau du labo).
 - Branche l'ISO (Stockage) et **démarre**.
 
 ## 3. Installer le système
@@ -38,8 +39,12 @@ et télécharge l'**ISO**.
 Dans le **Gestionnaire de serveur** (s'ouvre tout seul) :
 
 1. **Renomme** le serveur en `SRV01` (Serveur local → Nom de l'ordinateur) → redémarre.
-2. Donne-lui une **IP fixe** (ex : `10.0.0.10`, masque `255.255.255.0`) — un serveur ne
-   doit pas changer d'adresse. (Serveur local → Ethernet.)
+2. Donne-lui une **IP fixe sur la carte `LAB`** — un serveur ne doit pas changer d'adresse.
+   Repère la carte reliée au réseau interne (celle **sans** internet), puis :
+   - Adresse IP : **`10.10.10.10`** · Masque : `255.255.255.0`
+   - Passerelle : **laisse vide** (internet passe par la carte NAT)
+   - DNS préféré : **`127.0.0.1`** (lui-même — il deviendra serveur DNS à l'étape 6)
+   > 💡 L'autre carte (NAT) reste en **automatique (DHCP)** : c'est elle qui fournit internet.
 
 ## 5. Ajouter le rôle Active Directory
 

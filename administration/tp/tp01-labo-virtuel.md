@@ -45,18 +45,114 @@ Une **ISO** = l'image d'un disque d'installation (comme un CD d'install, en fich
 2. Clique sur le lecteur optique « Vide » → choisis ton fichier **.iso**.
 3. **Démarrer** la VM : elle boote sur l'installateur. Suis l'assistant d'installation.
 
-### 5. Le réglage réseau à connaître
+### 5. Le réseau du labo — à lire attentivement ⭐
 
-Dans **Configuration → Réseau** de la VM, le mode définit comment elle communique :
+C'est **l'étape qui bloque tout le monde au début.** Prends 5 min, ça t'évitera des heures
+de galère (« le réseau ne marche pas sur Ubuntu »).
 
-| Mode | Effet |
+#### Les 4 modes réseau de VirtualBox
+
+Dans **Configuration → Réseau** de chaque VM, le « Mode d'accès réseau » définit comment
+elle communique :
+
+| Mode | Internet ? | Les VM se parlent ? | Le PC hôte y accède ? | **IP automatique (DHCP) ?** |
+|---|---|---|---|---|
+| **NAT** (défaut) | ✅ oui | ❌ non | ❌ non | ✅ oui |
+| **Réseau NAT** | ✅ oui | ✅ oui | ❌ non | ✅ oui |
+| **Réseau interne** | ❌ non | ✅ oui | ❌ non | ❌ **NON** ⚠️ |
+| **Réseau privé hôte** (host-only) | ❌ non | ✅ oui | ✅ oui | ⚙️ selon réglage |
+| **Accès par pont** (bridge) | ✅ oui | ✅ oui | ✅ oui | ✅ (via ta box) |
+
+#### ⚠️ LE piège qui casse ton Ubuntu
+
+Le **Réseau interne** isole parfaitement tes VM (c'est bien pour un labo)… mais **il n'a
+AUCUN serveur DHCP**. Personne ne distribue d'adresse → ta VM démarre **sans IP** → « pas de
+réseau ». 
+
+Deux solutions, et on fait **les deux** dans ce labo :
+1. **Mettre des IP statiques** toi-même (au début).
+2. Plus tard, **Windows Server distribuera les IP** (rôle DHCP, cf. [admin 08](../08-dhcp-dns-serveur.md)) — c'est justement un exercice !
+
+#### 🏆 La config recommandée pour CE labo (2 cartes par VM)
+
+On veut **deux choses** : qu'elles **se parlent entre elles** (le lab) **et** qu'elles aient
+**internet** (mises à jour). Donc **2 cartes réseau** sur chaque VM :
+
+| Carte | Mode | Pour quoi | Nom Linux probable |
+|---|---|---|---|
+| **Carte 1** | **NAT** | Internet (apt, Windows Update) — IP auto | `enp0s3` |
+| **Carte 2** | **Réseau interne**, nom = **`LAB`** | Le réseau du labo (IP statiques) | `enp0s8` |
+
+> Fais exactement la même chose sur **Windows Server**, **Ubuntu** et **Kali**, avec le
+> **même nom de réseau interne** (`LAB`, à taper à l'identique). C'est ce qui les relie.
+
+```
+                 ┌── Carte 1 (NAT) ──► 🌐 Internet
+   Chaque VM ────┤
+                 └── Carte 2 (Réseau interne "LAB") ──► 🔗 les autres VM du labo
+```
+
+#### 🔢 Le plan d'adressage du labo (réseau `LAB`)
+
+On choisit une plage, par exemple **`10.10.10.0/24`** :
+
+| Machine | IP sur le réseau LAB |
 |---|---|
-| **NAT** (défaut) | La VM accède à internet, mais isolée | 
-| **Accès par pont (Bridge)** | La VM est **sur ton vrai réseau** (comme une machine physique) |
-| **Réseau interne / hôte-only** | Les VM se parlent **entre elles** (pour un labo privé) |
+| Windows Server | `10.10.10.10` |
+| Ubuntu | `10.10.10.20` |
+| Kali | `10.10.10.30` |
 
-> 💡 Pour un labo multi-VM (TP suivants), le **réseau interne** (ou hôte-only) est idéal :
-> tes VM forment leur propre petit réseau, isolé et sûr.
+> 💡 Pas besoin de passerelle sur la carte LAB : internet passe par la carte **NAT**.
+
+#### 🐧 Donner l'IP statique à Ubuntu **Server** (Netplan)
+
+1. Trouve le nom de tes cartes : `ip a` (tu verras `enp0s3`, `enp0s8`…).
+2. Édite la conf : `sudo nano /etc/netplan/01-netcfg.yaml` (ou le fichier présent dans
+   `/etc/netplan/`). Mets :
+
+   ```yaml
+   network:
+     version: 2
+     ethernets:
+       enp0s3:            # Carte 1 = NAT = internet
+         dhcp4: true
+       enp0s8:            # Carte 2 = Réseau interne LAB = IP fixe
+         dhcp4: false
+         addresses:
+           - 10.10.10.20/24
+   ```
+3. Applique : `sudo netplan apply`, puis vérifie : `ip a` (tu dois voir `10.10.10.20`).
+
+> ⚠️ **YAML = indentation avec des ESPACES, jamais de tabulation.** Une mauvaise indentation
+> = erreur. Respecte bien l'alignement ci-dessus.
+
+> 🖥️ **Ubuntu Desktop** (interface graphique) : pas de Netplan à la main → *Paramètres →
+> Réseau → la carte LAB → IPv4 → Manuel*, et saisis `10.10.10.20` / `24`.
+> 🪟 **Windows Server / Kali** : réglage de l'IP fixe sur la carte LAB (vu au TP02 pour
+> Windows ; sur Kali, via les paramètres réseau).
+
+#### 🩺 « Le réseau ne marche pas » — la check-list
+
+- [ ] La **carte est activée** ? (*Configuration → Réseau* → « Activer la carte réseau » coché)
+- [ ] Le **câble est branché** ? (*Avancé → Câble branché* coché)
+- [ ] Sur une carte **Réseau interne**, tu as bien mis une **IP statique** (pas de DHCP !) ?
+- [ ] Le **nom du réseau interne** est **identique** sur toutes les VM (`LAB`) ?
+- [ ] Les VM sont dans la **même plage** (`10.10.10.x`, masque `/24`) ?
+- [ ] Après config Ubuntu : `sudo netplan apply` lancé ? `ip a` montre la bonne IP ?
+- [ ] Test : depuis Ubuntu, `ping 10.10.10.10` (Windows Server) répond ? *(pense au
+  pare-feu Windows qui bloque parfois le ping — voir TP02.)*
+- [ ] Pas d'internet ? Vérifie la **carte NAT** (Carte 1) et, sous Ubuntu, `dhcp4: true`
+  dessus.
+
+#### 🪄 Option plus simple (si tu ne veux pas gérer les IP tout de suite)
+
+Pour juste « que tout marche » avec internet **et** communication entre VM, sans config :
+utilise un **Réseau NAT** unique. Dans VirtualBox : *Fichier → Outils → Gestionnaire de
+réseau → Réseaux NAT → Créer* (ex. `LAB-NAT`, réseau `10.10.10.0/24`). Puis sur chaque VM :
+Carte 1 → **Réseau NAT** → `LAB-NAT`. Il fournit **DHCP + internet + inter-VM**.
+> ⚠️ À éviter **quand tu feras l'Active Directory** (TP02+) : tu voudras que **Windows
+> Server** soit ton serveur DHCP/DNS, et le DHCP du Réseau NAT entrerait en conflit. Pour
+> l'AD, reviens à **Réseau interne + IP statiques** (la config recommandée ci-dessus).
 
 ---
 
