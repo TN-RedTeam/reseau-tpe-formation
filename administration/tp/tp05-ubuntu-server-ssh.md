@@ -13,9 +13,12 @@
 1. Télécharge l'**ISO de Ubuntu Server LTS** (gratuit, ubuntu.com) — la version « LTS » =
    support long, celle qu'on met en production.
 2. VirtualBox → **Nouvelle** → `SRV-LINUX` · Linux / Ubuntu 64-bit · RAM **2048 Mo** ·
-   disque **20 Go** · réseau **Réseau interne `labo`** (ou Accès par pont pour SSH facile).
+   disque **20 Go**. Réseau (comme au [TP01](tp01-labo-virtuel.md#5-le-réseau-du-labo--à-lire-attentivement-)) :
+   **Carte 1 = NAT** (internet) + **Carte 2 = Réseau interne `LAB`**.
 3. Branche l'ISO, démarre, suis l'installateur : clavier FR, **installe OpenSSH server**
    quand c'est proposé (coche la case !), crée ton utilisateur (ex : `admin-labo`).
+4. **Donne-lui son IP fixe `10.10.10.20`** sur la carte LAB (via Netplan — procédure
+   détaillée au [TP01, section 5](tp01-labo-virtuel.md#-donner-lip-statique-à-ubuntu-server-netplan)).
 
 ## 2. Premiers repères (dans la console de la VM)
 
@@ -26,19 +29,26 @@ pwd            # où suis-je
 ls -l          # contenu du dossier
 whoami         # mon compte
 id             # mes groupes
-ip a           # mon adresse IP  (note-la : ex 10.0.0.50)
+ip a           # mon adresse IP  (tu dois voir 10.10.10.20 sur la carte LAB)
 ```
 
-## 3. Se connecter en SSH (depuis ton PC)
+## 3. Se connecter en SSH (depuis une autre VM du labo)
 
-Depuis le terminal de ton PC hôte (PowerShell, Terminal) :
+> ⚠️ **Important** : le **Réseau interne `LAB` n'est PAS accessible depuis ton PC hôte**
+> (c'est fait pour isoler le labo). Donc on se connecte en SSH **depuis une autre VM du
+> LAB** — par exemple depuis **Windows Server** (PowerShell) ou **Kali** :
 
 ```bash
-ssh admin-labo@10.0.0.50      # remplace par l'IP notée
+ssh admin-labo@10.10.10.20     # l'IP fixe de l'Ubuntu sur le réseau LAB
 ```
 
-> 🎉 Tu administres maintenant le serveur **à distance**, comme en vrai. Tu n'as plus besoin
-> de la fenêtre de la VM.
+> 🎉 Tu administres le serveur **à distance d'une machine à l'autre**, exactement comme en
+> vrai. Tu n'as plus besoin de la fenêtre de la VM Ubuntu.
+
+> 💡 **Tu veux vraiment SSH depuis ton PC hôte ?** Deux options : ajouter une **3ᵉ carte
+> « Réseau privé hôte » (host-only)** à l'Ubuntu, ou mettre une **redirection de port** sur
+> la carte NAT (*Configuration → Réseau → Carte 1 → Avancé → Redirection de ports* :
+> hôte `2222` → invité `22`), puis `ssh -p 2222 admin-labo@127.0.0.1` depuis l'hôte.
 
 ## 4. Gérer des utilisateurs
 
