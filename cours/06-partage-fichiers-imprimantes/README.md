@@ -92,6 +92,10 @@ d'adresse, puis le nom d'un autre PC de ton réseau (si tu en as un). Tu verras 
 dossiers partagés. Sinon, crée un dossier de test, fais clic droit → Propriétés →
 **Partage**, et observe les options (sans forcément valider).
 
+> 💡 Tu mélanges **Linux, Windows et Mac** ? Partager un dossier entre eux, c'est le rôle
+> de **SMB/Samba** : voir le [tuto partage multi-OS](../../00-demarrage/organiser-son-labo.md#partie-2--partager-un-dossier-entre-tes-machines)
+> (ou la [fiche-mémo](../../fiches-memo/fiche-partage-multi-os.md)).
+
 > ➡️ Fais ensuite l'[exercice 06](../../exercices/06-partage-fichiers-imprimantes.md).
 
 ---

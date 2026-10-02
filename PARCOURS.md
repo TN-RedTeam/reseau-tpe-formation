@@ -16,6 +16,7 @@ les étapes **dans l'ordre, de haut en bas**, et **coche** au fur et à mesure.
 ## 🟢 Phase 0 — Démarrage *(1 session)*
 
 - [ ] [Lire `00-demarrage/`](00-demarrage/) — prérequis et comment utiliser le dépôt
+- [ ] *(Si tu as plusieurs machines)* [Tuto — organiser ton atelier + partage multi-OS](00-demarrage/organiser-son-labo.md)
 
 *(Le simulateur s'installe en Phase 2, juste avant de pratiquer. Pas besoin maintenant.)*
 
@@ -122,5 +123,9 @@ gérer** un réseau d'entreprise, de la TPE à la PME, jusqu'à l'infogérance. 
 
 > 💡 La suite, c'est la **vraie pratique** : monte ton propre labo, propose un audit
 > gratuit à un proche, et garde les [fiches-mémo](fiches-memo/) sous la main.
+
+> 🧰 **À garder en référence** (pas une étape, à consulter quand le besoin arrive) :
+> la [boîte à outils de l'infogéreur](outils/) — RMM, monitoring, sauvegarde, etc.,
+> avec benchmark (gratuit/payant, open source).
 
 ⬅️ [Retour à l'accueil](README.md)
