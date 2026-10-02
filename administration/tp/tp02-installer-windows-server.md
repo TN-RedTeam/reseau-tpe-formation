@@ -19,7 +19,7 @@ et télécharge l'**ISO**.
 - Dans VirtualBox : **Nouvelle** → nom `SRV01`.
 - Type : Microsoft Windows, Version : Windows Server (64-bit).
 - RAM : **4096 Mo** (4 Go) · Disque : **40 Go**.
-- Réseau : rattache la VM au **réseau du labo** (voir [TP01, section 5](tp01-labo-virtuel.md#5-le-réseau-du-labo--à-lire-attentivement-)).
+- Réseau : rattache la VM au **réseau du labo** (voir [TP01, section 5](tp01-labo-virtuel.md#5-le-réseau-du-labo)).
   Pour démarrer, l'**option simple « Réseau NAT » (`LAB-NAT`)** suffit ; tu passeras aux
   **2 cartes** le jour de l'exercice DHCP. Dans tous les cas, on donne à Windows Server une
   **IP fixe** (étape 4) : un contrôleur de domaine doit avoir une adresse stable.

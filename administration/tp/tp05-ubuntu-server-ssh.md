@@ -13,12 +13,12 @@
 1. Télécharge l'**ISO de Ubuntu Server LTS** (gratuit, ubuntu.com) — la version « LTS » =
    support long, celle qu'on met en production.
 2. VirtualBox → **Nouvelle** → `SRV-LINUX` · Linux / Ubuntu 64-bit · RAM **2048 Mo** ·
-   disque **20 Go**. Réseau : rattache-la au labo (voir [TP01, section 5](tp01-labo-virtuel.md#5-le-réseau-du-labo--à-lire-attentivement-)) —
+   disque **20 Go**. Réseau : rattache-la au labo (voir [TP01, section 5](tp01-labo-virtuel.md#5-le-réseau-du-labo)) —
    **option simple** : une carte en **« Réseau NAT » (`LAB-NAT`)** → **IP automatique**.
 3. Branche l'ISO, démarre, suis l'installateur : clavier FR, **installe OpenSSH server**
    quand c'est proposé (coche la case !), crée ton utilisateur (ex : `admin-labo`).
 4. *(Option avancée seulement)* fixe une IP statique `10.10.10.20` via Netplan
-   ([TP01 §5](tp01-labo-virtuel.md#-donner-lip-statique-à-ubuntu-server-netplan-option-avancée)).
+   ([TP01 §5](tp01-labo-virtuel.md#5-le-réseau-du-labo)).
    En option simple, **note juste l'IP** donnée automatiquement (étape suivante).
 
 ## 2. Premiers repères (dans la console de la VM)
