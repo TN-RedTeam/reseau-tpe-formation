@@ -73,26 +73,82 @@ Deux solutions, et on fait **les deux** dans ce labo :
 1. **Mettre des IP statiques** toi-même (au début).
 2. Plus tard, **Windows Server distribuera les IP** (rôle DHCP, cf. [admin 08](../08-dhcp-dns-serveur.md)) — c'est justement un exercice !
 
-#### 🏆 La config recommandée pour CE labo (2 cartes par VM)
+#### 📍 Où règle-t-on ça dans VirtualBox ? (c'est quoi « Carte 1 / Carte 2 »)
 
-On veut **deux choses** : qu'elles **se parlent entre elles** (le lab) **et** qu'elles aient
-**internet** (mises à jour). Donc **2 cartes réseau** sur chaque VM :
+Une VM peut avoir **jusqu'à 4 cartes réseau virtuelles**. Dans VirtualBox elles
+s'appellent **Adaptateur 1, 2, 3, 4** (c'est ça, « Carte 1 », « Carte 2 »…).
 
-| Carte | Mode | Pour quoi | Nom Linux probable |
+Pour les voir :
+1. **Éteins la VM** (on ne change pas le réseau quand elle tourne).
+2. Sélectionne la VM → **Configuration** (l'icône engrenage) → **Réseau**.
+3. En haut de la page Réseau, il y a **4 onglets : « Adaptateur 1 », « Adaptateur 2 »,
+   « Adaptateur 3 », « Adaptateur 4 »**. → **Adaptateur 1 = Carte 1**, etc.
+4. Sur chaque onglet : coche **« Activer la carte réseau »**, puis choisis le **« Mode
+   d'accès réseau »** dans la liste déroulante.
+
+> 💡 Si tu n'utilises **qu'une seule carte**, tu restes sur l'onglet **Adaptateur 1** et
+> tu ne touches pas aux autres. « Carte 2 » = **seulement si** tu actives un 2ᵉ onglet.
+
+> 🖥️ **VirtualBox 7.1** a un peu changé l'allure des réglages, mais la page **Réseau** garde
+> ses **4 onglets d'adaptateurs**. Si la fenêtre te paraît simplifiée, cherche un bouton
+> **« Expert »/« Avancé »** pour tout afficher.
+
+> 🔌 **Ton hôte est en filaire ?** Parfait, et ça **ne change rien** pour nous : le mode
+> **NAT** (et **Réseau NAT**) marche pareil en filaire ou en Wi-Fi. (Le filaire est même
+> l'idéal — c'est seulement le mode « Accès par pont » qui peut être capricieux en Wi-Fi,
+> et on ne l'utilise pas.)
+
+---
+
+#### ✅ Option SIMPLE (recommandée pour démarrer) : un « Réseau NAT »
+
+Le plus facile pour **te débloquer tout de suite** : une **seule carte** par VM, en mode
+**« Réseau NAT »**. Il donne **internet + une IP automatique (DHCP) + la communication
+entre VM**. Ton Ubuntu aura donc une IP **tout seul** (fini le « pas de réseau »).
+
+1. **Crée le réseau NAT une fois** : dans VirtualBox, menu **Fichier → Outils →
+   Gestionnaire de réseau** → onglet **« Réseaux NAT »** → **Créer**.
+   - Nom : `LAB-NAT` · CIDR : `10.10.10.0/24` · DHCP : **activé**.
+2. **Sur chaque VM** (Ubuntu, Windows Server, Kali), éteinte :
+   **Configuration → Réseau → Adaptateur 1** → *Mode d'accès réseau* : **« Réseau NAT »** →
+   *Nom* : **`LAB-NAT`**.
+3. Démarre les VM. Sur Ubuntu : `ip a` → tu dois voir une IP en `10.10.10.x`. 🎉
+   Test : `ping 10.10.10.1` (la passerelle), puis `ping ubuntu.com` (internet).
+
+> 👉 Avec cette option, **pas de Netplan ni d'IP statique à taper** : tout est automatique.
+> C'est l'idéal pour les premiers TP (01 à 07 côté réseau, et l'install des serveurs).
+
+---
+
+#### 🏆 Option AVANCÉE (2 cartes) : pour l'exercice DHCP / Active Directory
+
+Quand tu arriveras à **Active Directory** (TP02+) et au **rôle DHCP** ([admin 08](../08-dhcp-dns-serveur.md)),
+tu voudras que **ce soit Windows Server qui distribue les IP** — donc **pas** le DHCP de
+VirtualBox. On passe alors à **2 cartes** par VM :
+
+| Carte (onglet) | Mode | Pour quoi | Nom Linux probable |
 |---|---|---|---|
-| **Carte 1** | **NAT** | Internet (apt, Windows Update) — IP auto | `enp0s3` |
-| **Carte 2** | **Réseau interne**, nom = **`LAB`** | Le réseau du labo (IP statiques) | `enp0s8` |
+| **Adaptateur 1** | **NAT** | Internet (apt, Windows Update) — IP auto | `enp0s3` |
+| **Adaptateur 2** | **Réseau interne**, nom = **`LAB`** | Le réseau du labo (**IP statiques**) | `enp0s8` |
 
-> Fais exactement la même chose sur **Windows Server**, **Ubuntu** et **Kali**, avec le
-> **même nom de réseau interne** (`LAB`, à taper à l'identique). C'est ce qui les relie.
+> Le **Réseau interne** n'a **pas** de DHCP (c'est le piège du dessus) → on met des **IP
+> statiques** (voir plus bas). Même nom de réseau interne `LAB` sur les 3 VM = c'est ce qui
+> les relie.
 
 ```
-                 ┌── Carte 1 (NAT) ──► 🌐 Internet
+                 ┌── Adaptateur 1 (NAT) ──► 🌐 Internet
    Chaque VM ────┤
-                 └── Carte 2 (Réseau interne "LAB") ──► 🔗 les autres VM du labo
+                 └── Adaptateur 2 (Réseau interne "LAB") ──► 🔗 les autres VM du labo
 ```
 
-#### 🔢 Le plan d'adressage du labo (réseau `LAB`)
+> 💡 **Mon conseil** : commence avec l'**option simple** (Réseau NAT) pour tout faire
+> tourner. Tu basculeras sur l'option 2 cartes **seulement** au moment de l'exercice DHCP/AD.
+
+#### 🔢 Le plan d'adressage du labo *(pour l'option avancée 2 cartes)*
+
+> ℹ️ Avec l'**option simple (Réseau NAT)**, tu peux **sauter ce bloc** : les IP sont données
+> automatiquement. Ce qui suit sert quand tu fixes les IP toi-même (option avancée, ou pour
+> l'IP fixe de Windows Server).
 
 On choisit une plage, par exemple **`10.10.10.0/24`** :
 
@@ -104,7 +160,7 @@ On choisit une plage, par exemple **`10.10.10.0/24`** :
 
 > 💡 Pas besoin de passerelle sur la carte LAB : internet passe par la carte **NAT**.
 
-#### 🐧 Donner l'IP statique à Ubuntu **Server** (Netplan)
+#### 🐧 Donner l'IP statique à Ubuntu **Server** (Netplan) *(option avancée)*
 
 1. Trouve le nom de tes cartes : `ip a` (tu verras `enp0s3`, `enp0s8`…).
 2. Édite la conf : `sudo nano /etc/netplan/01-netcfg.yaml` (ou le fichier présent dans
@@ -133,26 +189,18 @@ On choisit une plage, par exemple **`10.10.10.0/24`** :
 
 #### 🩺 « Le réseau ne marche pas » — la check-list
 
-- [ ] La **carte est activée** ? (*Configuration → Réseau* → « Activer la carte réseau » coché)
+- [ ] L'**adaptateur est activé** ? (*Configuration → Réseau → Adaptateur 1* → « Activer la
+  carte réseau » coché)
 - [ ] Le **câble est branché** ? (*Avancé → Câble branché* coché)
-- [ ] Sur une carte **Réseau interne**, tu as bien mis une **IP statique** (pas de DHCP !) ?
-- [ ] Le **nom du réseau interne** est **identique** sur toutes les VM (`LAB`) ?
-- [ ] Les VM sont dans la **même plage** (`10.10.10.x`, masque `/24`) ?
-- [ ] Après config Ubuntu : `sudo netplan apply` lancé ? `ip a` montre la bonne IP ?
-- [ ] Test : depuis Ubuntu, `ping 10.10.10.10` (Windows Server) répond ? *(pense au
+- [ ] **Option simple** : l'adaptateur est bien sur **« Réseau NAT »** avec le nom
+  **`LAB-NAT`** (et pas juste « NAT ») ? Sur Ubuntu, `ip a` montre une IP en `10.10.10.x` ?
+- [ ] **Option avancée** : sur une carte **Réseau interne**, tu as bien mis une **IP
+  statique** (pas de DHCP !), même **nom `LAB`** et même **plage `10.10.10.x /24`** partout ?
+- [ ] Après config Ubuntu en statique : `sudo netplan apply` lancé ? `ip a` montre la bonne IP ?
+- [ ] Test entre VM : depuis Ubuntu, `ping 10.10.10.10` (Windows Server) répond ? *(pense au
   pare-feu Windows qui bloque parfois le ping — voir TP02.)*
-- [ ] Pas d'internet ? Vérifie la **carte NAT** (Carte 1) et, sous Ubuntu, `dhcp4: true`
-  dessus.
-
-#### 🪄 Option plus simple (si tu ne veux pas gérer les IP tout de suite)
-
-Pour juste « que tout marche » avec internet **et** communication entre VM, sans config :
-utilise un **Réseau NAT** unique. Dans VirtualBox : *Fichier → Outils → Gestionnaire de
-réseau → Réseaux NAT → Créer* (ex. `LAB-NAT`, réseau `10.10.10.0/24`). Puis sur chaque VM :
-Carte 1 → **Réseau NAT** → `LAB-NAT`. Il fournit **DHCP + internet + inter-VM**.
-> ⚠️ À éviter **quand tu feras l'Active Directory** (TP02+) : tu voudras que **Windows
-> Server** soit ton serveur DHCP/DNS, et le DHCP du Réseau NAT entrerait en conflit. Pour
-> l'AD, reviens à **Réseau interne + IP statiques** (la config recommandée ci-dessus).
+- [ ] Pas d'internet ? En option avancée, vérifie que l'**Adaptateur 1 (NAT)** est activé et,
+  sous Ubuntu, `dhcp4: true` dessus.
 
 ---
 
