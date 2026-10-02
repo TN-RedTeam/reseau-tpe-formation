@@ -14,5 +14,6 @@ imprimer et coller au mur. 📌
 | [Cycle client infogérance](fiche-infogerance.md) | Du 1ᵉʳ contact au contrat mensuel |
 | [Repères PME](fiche-pme.md) | AD, VLAN, serveur, switch managé, onduleur |
 | [Commandes d'administration](fiche-commandes-admin.md) | PowerShell & Linux côte à côte |
+| [Partage multi-OS (SMB/Samba)](fiche-partage-multi-os.md) | Partager un dossier Linux ↔ Windows ↔ Mac |
 
 ⬅️ [Retour au sommaire](../README.md)

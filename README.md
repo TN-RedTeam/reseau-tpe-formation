@@ -121,9 +121,12 @@ du premier contact au contrat mensuel**, deux sections dédiées :
 
 ## 🧰 Les raccourcis utiles
 
+- 🧭 [Parcours](PARCOURS.md) — ton fil d'Ariane, à suivre dans l'ordre.
 - 📖 [Glossaire](glossaire.md) — un mot que tu ne comprends pas ? Il est là.
 - 🗂️ [Fiches-mémo](fiches-memo/) — les antisèches à imprimer.
 - 🧪 [Bac à sable](bac-a-sable/) — pour pratiquer pour de vrai.
+- 🧰 [Outils (benchmark)](outils/) — les logiciels de l'infogéreur (RMM, sauvegarde…), *pour plus tard*.
+- 🛠️ [Tuto : organiser son atelier + partage multi-OS](00-demarrage/organiser-son-labo.md) — plusieurs machines ?
 
 ---
 

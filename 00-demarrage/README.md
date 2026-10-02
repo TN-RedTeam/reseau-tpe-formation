@@ -61,7 +61,17 @@ confortablement (il affiche joliment le Markdown et les schémas).
 
 ---
 
-## 5. Les mots compliqués
+## 5. Plusieurs machines ? Organise ton atelier
+
+Si tu as plusieurs ordinateurs (un PC de bureau, un laptop, un Mac…), un petit tuto
+t'explique **quelle machine utiliser pour quoi**, et **comment partager des dossiers**
+entre Linux, Windows et Mac (utile dès le cours 06) :
+
+👉 [**Tuto — Organiser ton atelier + partage multi-OS**](organiser-son-labo.md)
+
+---
+
+## 6. Les mots compliqués
 
 Dès qu'un mot technique t'échappe, ouvre le [glossaire](../glossaire.md).
 Chaque terme y est expliqué **en une seule phrase simple**.
@@ -76,9 +86,8 @@ Chaque terme y est expliqué **en une seule phrase simple**.
 
 ## 🔧 À essayer
 
-Ouvre le [README principal](../README.md) et **coche la case « J1 »** de la
-semaine 1 (tu peux cocher mentalement, ou éditer le fichier si tu es à l'aise).
-Tu viens de commencer ta formation. 🎉
+Ouvre le **[Parcours](../PARCOURS.md)** et repère la **Phase 1**. C'est ta feuille de
+route : tu la suivras étape par étape. Tu viens de commencer ta formation. 🎉
 
 ---
 
