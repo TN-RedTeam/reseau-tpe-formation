@@ -70,4 +70,9 @@ est gratuit. Dossier [`tp/`](tp/).
 > 💡 Prérequis conseillés : avoir vu les cours 13 (Active Directory), 15 (serveur) et la
 > section [exploitation](../exploitation/). Pas obligatoire, mais ça aide.
 
-⬅️ [Retour au sommaire](../README.md)
+---
+
+🎉 **C'est la dernière phase du [Parcours](../PARCOURS.md).** À la fin des TP, tu auras
+fait le tour complet de la formation.
+
+⬅️ [Retour au sommaire](../README.md) · 🧭 [Parcours](../PARCOURS.md)

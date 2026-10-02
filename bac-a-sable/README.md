@@ -141,4 +141,14 @@ Quand tu voudras t'entraîner sur du matériel réel :
 
 ---
 
-⬅️ [Retour au sommaire](../README.md)
+## ➡️ Et maintenant ?
+
+1. **Installe Packet Tracer** (section ci-dessus).
+2. Enchaîne sur les TP **dans l'ordre**, en commençant par le premier :
+   👉 **[TP01 — Ta première IP](tp/tp01-premiere-ip.md)**.
+
+Chaque TP s'appuie sur le précédent : ne les saute pas. 🙂
+
+---
+
+⬅️ [Retour au sommaire](../README.md) · 🧭 [Parcours](../PARCOURS.md)

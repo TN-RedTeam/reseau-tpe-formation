@@ -58,4 +58,8 @@ Dans [`modeles/`](modeles/) : des documents que tu copies et remplis pour chaque
 
 ---
 
-⬅️ [Retour au sommaire](../README.md)
+---
+
+➡️ **Ensuite** (toujours Phase 5) : l'[**exploitation au quotidien**](../exploitation/).
+
+⬅️ [Retour au sommaire](../README.md) · 🧭 [Parcours](../PARCOURS.md)
