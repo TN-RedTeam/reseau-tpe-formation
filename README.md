@@ -38,81 +38,27 @@ Pas plus. On avance par **petites sessions de 20-30 min**.
 
 ---
 
-## ✅ Parcours guidé (coche au fur et à mesure)
+## ✅ Par où commencer : suis le Parcours
 
-Chaque case = **une session de 20-30 min max**. Fais-les dans l'ordre. Rien ne
-presse : mieux vaut 1 session bien comprise que 3 survolées.
+👉 **[Ouvre le PARCOURS.md](PARCOURS.md)** — c'est **ton fil d'Ariane** : la liste
+ordonnée de **tout** ce qu'il faut faire, avec des **cases à cocher**. Tu la suis de
+haut en bas, une étape à la fois, sans jamais te demander « et maintenant ? ».
 
-### Semaine 1 — Les bases (comprendre)
+Le parcours est découpé en **6 phases** (du plus simple au plus complet) :
 
-- [ ] **J1** — Lire `00-demarrage/` + installer le simulateur
-- [ ] **J2** — Cours `01` : c'est quoi un réseau + exercice 01
-- [ ] **J3** — Cours `02` : adresses IP + exercice 02
-- [ ] **J4** — Cours `03` : DNS et DHCP + exercice 03
-- [ ] **J5** — Cours `04` : le routeur / la box + exercice 04
-- [ ] **J6** — `bac-a-sable/tp/tp01` : ta première IP dans le simulateur
-- [ ] **J7** — Révision : relire les 4 fiches-mémo de la semaine
+| Phase | Tu fais… |
+|---|---|
+| 🟢 **0. Démarrage** | Prérequis, comment utiliser le dépôt |
+| 📘 **1. Comprendre** | Les 11 cours de base + leurs exercices |
+| 🧪 **2. Pratiquer** | Le [bac à sable](bac-a-sable/) : installer le simulateur, puis les TP **dans l'ordre** |
+| 🎁 **3. Bonus** | La téléphonie VoIP |
+| 🏢 **4. PME** | Active Directory, VLAN, serveur, cloud, RGPD… |
+| 💼 **5. Le métier** | [Infogérance](infogerance/), [exploitation](exploitation/), [cas pratique](cas-pratique/) |
+| 🧑‍💼 **6. Administration** | [Admin serveur Windows & Linux](administration/) + TP en labo virtuel |
 
-### Semaine 2 — Le réseau local (manipuler)
-
-- [ ] **J8** — Cours `05` : Wi-Fi et réseau local + exercice 05
-- [ ] **J9** — Cours `06` : partage de fichiers et imprimantes + exercice 06
-- [ ] **J10** — `bac-a-sable/tp/tp02` : relier plusieurs PC
-- [ ] **J11** — Cours `07` : le NAS (stockage partagé) + exercice 07
-- [ ] **J12** — `bac-a-sable/tp/tp03` : ajouter un serveur de fichiers
-- [ ] **J13** — Révision + glossaire
-- [ ] **J14** — `bac-a-sable/tp/tp04` : monter un réseau TPE complet
-
-### Semaine 3 — Sécuriser et dépanner (devenir autonome)
-
-- [ ] **J15** — Cours `08` : sauvegardes + exercice 08
-- [ ] **J16** — Cours `09` : sécurité de base + exercice 09
-- [ ] **J17** — Cours `10` : VPN et accès distant + exercice 10
-- [ ] **J18** — `bac-a-sable/tp/tp05` : accès distant au réseau TPE
-- [ ] **J19** — Cours `11` : diagnostic et dépannage + exercice 11
-- [ ] **J20** — `bac-a-sable/tp/tp06` : le grand scénario de panne
-- [ ] **J21** — 🎉 Bilan : relire toutes les fiches-mémo, tu es prêt !
-
-### 🎁 Bonus (quand tu veux, après le parcours)
-
-- [ ] **Bonus** — Cours `12` : la téléphonie VoIP + exercice 12
-
-### 🏢 Semaine 4 — Monter en PME (technique)
-
-- [ ] **J22** — Cours `13` : Active Directory & domaine + exercice 13
-- [ ] **J23** — Cours `14` : VLAN & segmentation + exercice 14
-- [ ] **J24** — Cours `15` : le serveur d'entreprise + exercice 15
-- [ ] **J25** — Cours `16` : le switch managé + exercice 16
-- [ ] **J26** — Cours `17` : l'onduleur (UPS) + exercice 17
-- [ ] **J27** — Cours `18` : le cloud & le SaaS + exercice 18
-- [ ] **J28** — Cours `19` : Microsoft 365 + exercice 19
-- [ ] **J29** — Cours `20` : le RGPD pour TPE/PME + exercice 20
-
-### 💼 Semaine 5 — Devenir infogéreur (le métier)
-
-- [ ] **J30** — Infogérance `01` à `03` : contact, audit, rapport & devis
-- [ ] **J31** — Infogérance `04` & `05` : contrat mensuel, SLA, tarification
-- [ ] **J32** — Infogérance `06` : onboarding + prendre en main les modèles
-- [ ] **J33** — Exploitation `01` & `02` : supervision/RMM, prise à distance
-- [ ] **J34** — Exploitation `03` & `04` : ticketing, maintenance préventive
-- [ ] **J35** — Exploitation `05` & `06` : documentation, accès & mots de passe
-- [ ] **J36** — 🎯 Étudier le [cas pratique fil rouge](cas-pratique/) (client suivi de A à Z)
-- [ ] **J37** — 🎯 Rejouer le scénario avec les modèles vierges sur un client imaginaire
-
-### 🧑‍💼 Semaine 6-7 — Administration (pratique en labo virtuel)
-
-- [ ] **J38** — Admin `01` & `02` : c'est quoi administrer, comptes/groupes/droits
-- [ ] **J39** — Admin `03` + [TP01](administration/tp/tp01-labo-virtuel.md) : labo virtuel
-- [ ] **J40** — [TP02](administration/tp/tp02-installer-windows-server.md) : Windows Server + domaine
-- [ ] **J41** — Admin `04`/`05` + [TP03](administration/tp/tp03-ad-utilisateurs-gpo.md) : AD & GPO
-- [ ] **J42** — Admin `06` + [TP04](administration/tp/tp04-serveur-fichiers-ntfs.md) : fichiers & NTFS
-- [ ] **J43** — Admin `07` + [TP05](administration/tp/tp05-ubuntu-server-ssh.md) : Linux & SSH
-- [ ] **J44** — Admin `08` & `09` : DHCP/DNS serveur, logs & supervision
-- [ ] **J45** — Admin `10` : MAJ, sauvegarde & sécurisation serveur
-- [ ] **J46** — 🎓 [TP06](administration/tp/tp06-scenario-admin.md) : scénario d'administration complet
-
-> 💡 Astuce : tu n'es pas obligé de suivre le rythme « 1 jour = 1 session ».
-> Prends ton temps. L'important, c'est de **cocher dans l'ordre**.
+> 💡 **Règle anti-dispersion** : on **termine une phase avant la suivante**, et on ne
+> saute pas devant. Chaque session dure **20-30 min**. Perdu ? Reviens au
+> **[Parcours](PARCOURS.md)**.
 
 ---
 
@@ -181,6 +127,7 @@ du premier contact au contrat mensuel**, deux sections dédiées :
 
 ---
 
-👉 **Tu commences maintenant ?** Direction [`00-demarrage/`](00-demarrage/).
+👉 **Tu commences maintenant ?** Ouvre le **[Parcours](PARCOURS.md)** et suis-le de haut
+en bas. (Il démarre par [`00-demarrage/`](00-demarrage/).)
 
 Bon courage, tu vas y arriver. 💪

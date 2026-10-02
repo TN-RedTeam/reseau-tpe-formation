@@ -118,8 +118,14 @@ Tout répond ? Félicitations, ton réseau est en pleine santé — et tu viens 
 ton premier diagnostic méthodique de dépanneur. 🩺
 
 > ➡️ Fais ensuite l'[exercice 11](../../exercices/11-diagnostic-depannage.md).
-> Puis passe au grand scénario : [`bac-a-sable/tp/tp06`](../../bac-a-sable/tp/tp06-scenario-panne.md).
 
 ---
 
-⬅️ [Cours 10](../10-vpn-acces-distant/) · 🏁 [Retour au sommaire](../../README.md)
+🎓 **Bravo, tu as terminé les 11 cours de base !** Tu comprends maintenant comment marche
+un réseau. **La suite logique, c'est la pratique** : direction le
+[**bac à sable**](../../bac-a-sable/) — tu y installes le simulateur, puis tu fais les TP
+**dans l'ordre** (TP01 → TP06). Le TP06 réutilisera justement ce cours sur le dépannage. 😉
+
+---
+
+⬅️ [Cours 10](../10-vpn-acces-distant/) · 🧭 [Parcours](../../PARCOURS.md) · 🧪 [Bac à sable](../../bac-a-sable/)

@@ -111,7 +111,10 @@ Chronomètre-toi. 😎
 
 ---
 
-🎉 **Félicitations, tu as terminé tous les TP !** Tu sais monter, configurer et
-dépanner un réseau de TPE. Retour au [sommaire](../../README.md) pour le bilan.
+🎉 **Félicitations, tu as terminé la Phase 2 (pratique) !** Tu sais monter, configurer et
+dépanner un réseau de TPE.
 
-⬅️ [TP05](tp05-acces-distant.md)
+**La suite dans le [Parcours](../../PARCOURS.md)** → Phase 3 : le module bonus
+[**VoIP (cours 12)**](../../cours/12-voip-telephonie/).
+
+⬅️ [TP05](tp05-acces-distant.md) · 🧭 [Parcours](../../PARCOURS.md)

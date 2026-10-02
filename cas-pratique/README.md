@@ -60,4 +60,9 @@ flowchart LR
 
 ---
 
-⬅️ [Retour au sommaire](../README.md) · [Section infogérance](../infogerance/)
+---
+
+➡️ **Ensuite** (Phase 6 du [Parcours](../PARCOURS.md)) : le track
+[**administration réseau & serveur**](../administration/).
+
+⬅️ [Retour au sommaire](../README.md) · [Infogérance](../infogerance/) · 🧭 [Parcours](../PARCOURS.md)

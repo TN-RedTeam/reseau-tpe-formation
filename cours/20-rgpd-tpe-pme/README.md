@@ -105,4 +105,6 @@ IT** (sécurité, sauvegarde, accès) contribue à la conformité.
 
 ---
 
-⬅️ [Cours 19](../19-microsoft-365/) · 🏁 [Retour au sommaire](../../README.md)
+💼 **Suite (Phase 5 du [Parcours](../../PARCOURS.md)) : le métier d'infogérance.**
+
+⬅️ [Cours 19](../19-microsoft-365/) · 🧭 [Parcours](../../PARCOURS.md) · ➡️ [Infogérance](../../infogerance/)

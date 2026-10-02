@@ -117,4 +117,6 @@ déjà en VoIP. 🎉 Repère aussi, dans l'interface de la box, s'il existe une 
 
 ---
 
-⬅️ [Cours 11](../11-diagnostic-depannage/) · 🏁 [Retour au sommaire](../../README.md)
+🏢 **Suite (Phase 4 du [Parcours](../../PARCOURS.md)) : monter en PME.**
+
+⬅️ [Cours 11](../11-diagnostic-depannage/) · 🧭 [Parcours](../../PARCOURS.md) · ➡️ [Cours 13 — Active Directory](../13-active-directory-domaine/)
