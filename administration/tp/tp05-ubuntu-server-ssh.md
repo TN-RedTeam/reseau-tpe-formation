@@ -13,12 +13,13 @@
 1. Télécharge l'**ISO de Ubuntu Server LTS** (gratuit, ubuntu.com) — la version « LTS » =
    support long, celle qu'on met en production.
 2. VirtualBox → **Nouvelle** → `SRV-LINUX` · Linux / Ubuntu 64-bit · RAM **2048 Mo** ·
-   disque **20 Go**. Réseau (comme au [TP01](tp01-labo-virtuel.md#5-le-réseau-du-labo--à-lire-attentivement-)) :
-   **Carte 1 = NAT** (internet) + **Carte 2 = Réseau interne `LAB`**.
+   disque **20 Go**. Réseau : rattache-la au labo (voir [TP01, section 5](tp01-labo-virtuel.md#5-le-réseau-du-labo--à-lire-attentivement-)) —
+   **option simple** : une carte en **« Réseau NAT » (`LAB-NAT`)** → **IP automatique**.
 3. Branche l'ISO, démarre, suis l'installateur : clavier FR, **installe OpenSSH server**
    quand c'est proposé (coche la case !), crée ton utilisateur (ex : `admin-labo`).
-4. **Donne-lui son IP fixe `10.10.10.20`** sur la carte LAB (via Netplan — procédure
-   détaillée au [TP01, section 5](tp01-labo-virtuel.md#-donner-lip-statique-à-ubuntu-server-netplan)).
+4. *(Option avancée seulement)* fixe une IP statique `10.10.10.20` via Netplan
+   ([TP01 §5](tp01-labo-virtuel.md#-donner-lip-statique-à-ubuntu-server-netplan-option-avancée)).
+   En option simple, **note juste l'IP** donnée automatiquement (étape suivante).
 
 ## 2. Premiers repères (dans la console de la VM)
 
@@ -29,17 +30,17 @@ pwd            # où suis-je
 ls -l          # contenu du dossier
 whoami         # mon compte
 id             # mes groupes
-ip a           # mon adresse IP  (tu dois voir 10.10.10.20 sur la carte LAB)
+ip a           # mon adresse IP → NOTE-LA (ex. 10.10.10.x sur le réseau du labo)
 ```
 
 ## 3. Se connecter en SSH (depuis une autre VM du labo)
 
-> ⚠️ **Important** : le **Réseau interne `LAB` n'est PAS accessible depuis ton PC hôte**
-> (c'est fait pour isoler le labo). Donc on se connecte en SSH **depuis une autre VM du
-> LAB** — par exemple depuis **Windows Server** (PowerShell) ou **Kali** :
+> ⚠️ **Important** : le réseau du labo **n'est PAS accessible depuis ton PC hôte** (c'est
+> fait pour isoler le labo). Donc on se connecte en SSH **depuis une autre VM du labo** —
+> par exemple depuis **Windows Server** (PowerShell) ou **Kali** :
 
 ```bash
-ssh admin-labo@10.10.10.20     # l'IP fixe de l'Ubuntu sur le réseau LAB
+ssh admin-labo@10.10.10.20     # remplace par l'IP de ton Ubuntu (vue avec « ip a »)
 ```
 
 > 🎉 Tu administres le serveur **à distance d'une machine à l'autre**, exactement comme en

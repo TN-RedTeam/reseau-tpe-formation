@@ -19,8 +19,10 @@ et télécharge l'**ISO**.
 - Dans VirtualBox : **Nouvelle** → nom `SRV01`.
 - Type : Microsoft Windows, Version : Windows Server (64-bit).
 - RAM : **4096 Mo** (4 Go) · Disque : **40 Go**.
-- Réseau (comme vu au [TP01](tp01-labo-virtuel.md#5-le-réseau-du-labo--à-lire-attentivement-)) : **2 cartes** →
-  **Carte 1 = NAT** (internet) et **Carte 2 = Réseau interne nommé `LAB`** (le réseau du labo).
+- Réseau : rattache la VM au **réseau du labo** (voir [TP01, section 5](tp01-labo-virtuel.md#5-le-réseau-du-labo--à-lire-attentivement-)).
+  Pour démarrer, l'**option simple « Réseau NAT » (`LAB-NAT`)** suffit ; tu passeras aux
+  **2 cartes** le jour de l'exercice DHCP. Dans tous les cas, on donne à Windows Server une
+  **IP fixe** (étape 4) : un contrôleur de domaine doit avoir une adresse stable.
 - Branche l'ISO (Stockage) et **démarre**.
 
 ## 3. Installer le système
@@ -39,12 +41,16 @@ et télécharge l'**ISO**.
 Dans le **Gestionnaire de serveur** (s'ouvre tout seul) :
 
 1. **Renomme** le serveur en `SRV01` (Serveur local → Nom de l'ordinateur) → redémarre.
-2. Donne-lui une **IP fixe sur la carte `LAB`** — un serveur ne doit pas changer d'adresse.
-   Repère la carte reliée au réseau interne (celle **sans** internet), puis :
+2. Donne-lui une **IP fixe** — un contrôleur de domaine ne doit pas changer d'adresse.
+   Dans *Serveur local → la carte réseau* :
    - Adresse IP : **`10.10.10.10`** · Masque : `255.255.255.0`
-   - Passerelle : **laisse vide** (internet passe par la carte NAT)
-   - DNS préféré : **`127.0.0.1`** (lui-même — il deviendra serveur DNS à l'étape 6)
-   > 💡 L'autre carte (NAT) reste en **automatique (DHCP)** : c'est elle qui fournit internet.
+   - **Passerelle** : `10.10.10.1` *(option simple Réseau NAT)* — ou **vide** *(option
+     avancée : la passerelle est sur l'autre carte, la NAT)*.
+   - **DNS préféré** : **`127.0.0.1`** (lui-même — il deviendra serveur DNS à l'étape 6).
+   > 💡 Astuce : ajoute **`1.1.1.1`** en **DNS secondaire** le temps des mises à jour (pour
+   > résoudre les noms internet), tu l'enlèveras une fois les redirecteurs DNS configurés.
+   > En **option avancée (2 cartes)**, l'autre carte (NAT) reste en **automatique** et fournit
+   > internet.
 
 ## 5. Ajouter le rôle Active Directory
 
