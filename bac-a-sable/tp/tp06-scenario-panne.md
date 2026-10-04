@@ -13,6 +13,15 @@ diagnostiques et tu répares, avec la méthode du cours 11.
 Ouvre `tp04.pkt` (ton réseau TPE complet qui **fonctionne**). Vérifie d'abord que
 tout va bien (un `ping` du serveur depuis un PC répond). On part d'un réseau sain.
 
+> ⚠️ **Reste en mode `Realtime`** (bouton en bas à droite) pendant tout ce TP : c'est ce
+> qui fait que tes `ping` répondent tout de suite. En mode **Simulation**, le ping semble
+> « bloqué » tant que tu n'appuies pas sur Play ▶ — ce n'est **pas** une panne, juste le
+> mode ralenti. 😉
+>
+> 🧠 Rappel topologie : chaque PC a **son propre câble** vers le switch (montage en
+> **étoile**). Débrancher **un** PC n'isole **que celui-là** — les autres continuent de se
+> parler via le switch. C'est tout l'intérêt de la question « un seul PC, ou tout le monde ? ».
+
 ---
 
 ## 🎭 Les 3 pannes à provoquer puis réparer

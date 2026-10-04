@@ -117,6 +117,14 @@ Packet Tracer est gratuit, mais il faut un compte Cisco « Networking Academy »
 
 Dans l'ordre, du plus simple au plus complet. Dossier [`tp/`](tp/).
 
+> ⚠️ **Deux réflexes Packet Tracer, à retenir pour TOUS les TP :**
+> 1. **Pour que tes `ping` répondent**, reste en mode **« Realtime »** (bouton en bas à
+>    droite, à gauche de « Simulation »). En mode **Simulation**, rien ne bouge tant que tu
+>    n'appuies pas sur **Play ▶** — c'est normal, ce mode sert à voir les paquets au ralenti.
+> 2. **Effacer l'écran du Command Prompt** : il n'y a pas de `cls`/`clear` dans Packet
+>    Tracer. Pour repartir sur un écran vide, **ferme puis rouvre** la fenêtre « Command
+>    Prompt ».
+
 | TP | Titre | Tu apprends à… |
 |---|---|---|
 | [TP01](tp/tp01-premiere-ip.md) | Ta première IP | Donner une adresse IP à un PC |

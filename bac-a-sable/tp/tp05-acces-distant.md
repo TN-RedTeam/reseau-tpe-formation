@@ -163,6 +163,9 @@ end
 
 ### 5. Tester l'accès distant
 
+> ⚠️ **D'abord en mode `Realtime`** (bas à droite) pour le test : le `ping` répond tout de
+> suite. (Le mode Simulation, c'est juste pour l'astuce visuelle ci-dessous.)
+
 Depuis `PC-Teletravail` → **Desktop → Command Prompt** :
 - `ping 192.168.1.100` (le serveur du bureau) → **Reply from…** ✅ 🎉
 

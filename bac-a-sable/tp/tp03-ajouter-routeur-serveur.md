@@ -57,6 +57,8 @@ Pour que les PC puissent un jour sortir du réseau, indique-leur la passerelle :
 
 ### 6. Tester
 
+> ⚠️ **Mode `Realtime`** (bas à droite) pour que les `ping` répondent tout de suite.
+
 Depuis `PC0` → Command Prompt :
 - `ping 192.168.1.1` → la **box** répond ?
 - `ping 192.168.1.100` → le **serveur** répond ?

@@ -66,6 +66,8 @@ Pour **chaque** PC (`PC0` à `PC4`) :
 
 ### 6. Tester tout le réseau
 
+> ⚠️ **Mode `Realtime`** (bas à droite) pour que les `ping` répondent tout de suite.
+
 Depuis `PC0` → Command Prompt :
 - `ipconfig` → tu as reçu une IP automatiquement ? ✅
 - `ping 192.168.1.1` → la box répond ? ✅

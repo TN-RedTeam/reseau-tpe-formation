@@ -48,6 +48,9 @@
 
 ### 4. Tester avec ping
 
+> ⚠️ **Mets-toi en mode `Realtime`** (bas à droite) pour que le `ping` réponde tout de
+> suite. En `Simulation`, rien ne s'affiche tant que tu n'appuies pas sur Play ▶.
+
 - `PC0` → Desktop → Command Prompt.
 - Tape : `ping 192.168.1.11`
 - Si tu vois **« Reply from 192.168.1.11 »** → 🎉 les deux PC communiquent !
