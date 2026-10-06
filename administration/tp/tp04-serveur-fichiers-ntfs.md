@@ -18,10 +18,24 @@ flowchart LR
 
 ---
 
-## 1. Créer le dossier
+## 1. Créer le dossier (sur le serveur lui-même)
 
-Sur `SRV01`, crée l'arborescence : `D:\Partages\Compta`
-*(si tu n'as qu'un disque C:, utilise `C:\Partages\Compta`.)*
+> 📍 **Où ?** Tu travailles **dans la fenêtre de ta VM Windows Server**, sur le **bureau de
+> `SRV01`**. `SRV01` est **le nom du serveur sur lequel tu es déjà** → c'est pour ça que tu
+> ne le vois **pas** dans l'explorateur : **on ne se cherche pas soi-même** ! Tu crées donc
+> le dossier **localement**, sur le disque du serveur (comme n'importe quel dossier).
+
+1. Sur le bureau de `SRV01`, ouvre l'**Explorateur de fichiers** (icône dossier dans la barre
+   des tâches, ou touche **Windows + E**).
+2. Clique sur **« Ce PC »**, puis double-clique sur le disque **C:** (ou **D:** si le serveur
+   en possède un).
+3. Clic droit dans la fenêtre → **Nouveau → Dossier** → nomme-le **`Partages`**.
+4. Entre dans `Partages`, crée dedans un dossier **`Compta`**.
+   → Tu obtiens `C:\Partages\Compta` (ou `D:\Partages\Compta`). ✅
+
+> 💡 Le `\\SRV01\Compta` qu'on utilisera à l'étape 4 sert à atteindre ce dossier **depuis un
+> AUTRE PC, par le réseau** — pas depuis le serveur. (Normal que tu ne « voies pas SRV01 »
+> dans l'explorateur du serveur : tu **es** SRV01.)
 
 ## 2. Partager le dossier (la porte de l'immeuble)
 
@@ -54,6 +68,33 @@ Sur `SRV01`, crée l'arborescence : `D:\Partages\Compta`
 2. Sécurité → **Avancé** → **Désactiver l'héritage** → *« Convertir… »*.
 3. Retire `GG_Compta`, ajoute un groupe `GG_Direction` en **Modifier**.
    → La « Paie » n'est plus visible par toute la compta, seulement par la direction.
+
+---
+
+## 🏢 Et dans une vraie TPE ? (sans Windows Server)
+
+Tu as raison de te poser la question : **une TPE n'a quasiment jamais de Windows Server**
+(ça, c'est la PME). Mais **la logique que tu viens d'apprendre — partage + droits + moindre
+privilège — est identique partout.** Seul l'écran de réglage change selon le support :
+
+- 🪟 **Depuis un PC Windows 11** : tu peux partager un dossier (clic droit → **Propriétés →
+  Partage**, et onglet **Sécurité** pour les droits NTFS) — **exactement la même logique**.
+  ⚠️ Limites : le PC doit **rester allumé**, ~**20 connexions simultanées** max, et **pas de
+  gestion centralisée**. Dépannage express sur 5-6 postes : OK. Solution durable : non.
+- 💾 **Un NAS** (Synology/QNAP, ou TrueNAS/OpenMediaVault) : **LA solution TPE** (cours 07).
+  Toujours allumé, droits par dossier, sauvegarde intégrée. Un NAS, c'est justement un **petit
+  serveur de fichiers prêt à l'emploi** — mêmes notions (dossiers partagés + utilisateurs +
+  droits), via une interface web.
+- 🐧 **Serveur Linux (Ubuntu) + postes Windows** : on installe **Samba** → le serveur Linux
+  « parle » le protocole de partage de Windows (**SMB**). Les PC Windows accèdent alors à
+  `\\serveur-linux\partage` **exactement pareil**. Les droits se règlent côté **Samba +
+  permissions Linux (`rwx`)** au lieu de NTFS (voir [admin 07](07-linux-serveur-bases.md) et
+  la [fiche partage multi-OS](../../fiches-memo/fiche-partage-multi-os.md)). 💡 D'ailleurs, un
+  **NAS, c'est du Linux + Samba** sous le capot.
+
+> 🎯 **À retenir** : apprends la **logique ici** (sur Windows Server), puis applique-la sur le
+> support réel du client (PC Windows pour du dépannage, **NAS** le plus souvent, ou serveur
+> Linux/Samba). Le « où je clique » change, **le raisonnement non**.
 
 ---
 
