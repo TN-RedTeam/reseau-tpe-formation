@@ -34,6 +34,62 @@ avantages · inconvénients) et **ma reco pour démarrer**.
 15. [Audit & inventaire client (découverte du parc)](#15-audit--inventaire-client-découverte-du-parc)
 16. [🎒 La stack recommandée pour démarrer](#-la-stack-recommandée-pour-démarrer)
 
+> 🔓 **Tu veux du 100 % open source & auto-hébergé ?** → va directement à la
+> [**stack souveraine**](#-priorité-open-source--auto-hébergé-la-stack-souveraine).
+
+---
+
+## 🔓 Priorité open source & auto-hébergé : la stack souveraine
+
+Si ta priorité est de **maîtriser tes données** (pas de SaaS où t'inscrire, pas de données
+qui fuient lors d'un hack chez l'éditeur), voici, catégorie par catégorie, le **meilleur
+équivalent open source que tu héberges toi-même**.
+
+| Besoin | 🔓 Open source auto-hébergeable | Remplace (SaaS/proprio) | Note (perf / complétude) |
+|---|---|---|---|
+| RMM | **Tactical RMM** | Atera, NinjaOne | Complet ; hébergement un peu technique |
+| Prise à distance | **MeshCentral**, **RustDesk** (relais perso), **Apache Guacamole** | AnyDesk, TeamViewer | Très bon ; Guacamole = RDP/SSH/VNC par navigateur |
+| Monitoring | **Zabbix** ou **Checkmk Raw** ; **Uptime Kuma** (simple) ; **Grafana+Prometheus** | PRTG | Excellents, matures |
+| Ticketing + inventaire | **GLPI** (+ agent) | Freshdesk, Autotask | Référence FR, très complet |
+| Sauvegarde | **UrBackup**, **Bareos/Bacula**, **Kopia/Restic/Borg** ; **Proxmox Backup Server** (VM) | Veeam | Solide ; ⚠️ voir sauvegarde **M365** ci-dessous |
+| Antivirus / EDR | ⚠️ **Defender** (intégré) + **Wazuh** (XDR/SIEM) | Bitdefender, ESET | **Point faible de l'OSS** — voir note |
+| Mots de passe | **Vaultwarden** (serveur Bitwarden perso) ; **KeePassXC** ; **Passbolt** | Bitwarden cloud, Keeper | ✅ Excellent, aucun compromis |
+| Documentation | **BookStack**, **Wiki.js**, **Docmost** ; **NetBox** (réseau) | Hudu, IT Glue | Très bon |
+| Virtualisation | **Proxmox VE** (+ **PBS** pour sauver les VM) | VMware | ✅ Référence, excellent |
+| VPN | **WireGuard**, **OpenVPN** ; **Headscale**, **Netbird**, **Firezone** (auto-hébergés) | Tailscale cloud | ✅ Excellent |
+| Diagnostic | **nmap, Wireshark, Angry IP Scanner, PuTTY, WinSCP, Remmina** | Advanced IP Scanner, MobaXterm | ✅ Déjà tout OSS |
+| Gestion M365 | **CIPP** (auto-hébergeable) | — | Catégorie liée à MS par nature |
+| Déploiement | **Ansible** ; **OPSI** (parc Windows) ; **FOG** (imaging) | PDQ | Puissant |
+| Facturation / gestion | **Dolibarr** (tu l'as déjà !), **Odoo Community**, **Invoice Ninja** | — | Voir note facture électronique |
+
+### ⚠️ Les 2 cas où l'open source est faible (honnêteté)
+
+- **Antivirus / EDR** : il n'existe **pas** d'équivalent open source aussi efficace qu'un EDR
+  commercial sur Windows. Le pragmatique : **Microsoft Defender** (intégré, gratuit, piloté
+  par GPO/Intune) **+ Wazuh** (OSS) pour la **détection/journalisation** (FIM, alertes).
+  ClamAV (OSS) sert surtout au scan mail/fichiers, pas à la protection d'un poste moderne.
+- **Sauvegarde Microsoft 365** : l'offre OSS est **immature**. Si le client est sur M365, soit
+  tu acceptes une solution non-OSS dédiée, soit tu **rapatries** les données (ex. OneDrive/mails
+  exportés) dans ta sauvegarde OSS — moins automatique.
+
+### 🧾 Note — facture électronique (réforme FR 2026-2027)
+
+- Réception obligatoire pour **toutes** les entreprises : **1ᵉʳ sept. 2026** ; émission
+  **TPE/PME** : **1ᵉʳ sept. 2027**. Format **structuré** (Factur-X / UBL / CII) + passage par
+  une **Plateforme Agréée (PA)** (ex-« PDP »).
+- **Dolibarr reste conforme** : Factur-X natif, **module eInvoicing gratuit** (DoliStore),
+  **v17 minimum (v19 recommandée)**, à **connecter à une Plateforme Agréée**. → Pas besoin de
+  changer d'outil, juste de le mettre à jour et de le brancher à une PA.
+- ⚠️ Réglementation **mouvante** : vérifie dates et terminologie sur **impots.gouv.fr**.
+
+### ⚖️ Le vrai compromis de l'auto-hébergement
+
+Tout héberger toi-même = **souveraineté** totale… mais **tu deviens responsable** de
+l'hébergement, des **mises à jour**, de la **sécurité** et de la **sauvegarde** de ces outils.
+C'est une charge réelle. Bon équilibre pragmatique : auto-héberge en priorité ce qui contient
+les **données sensibles** (mots de passe → Vaultwarden, doc, sauvegardes), et accepte un outil
+clé-en-main là où l'OSS est faible (EDR).
+
 ---
 
 ## 1. Supervision & RMM
@@ -271,13 +327,18 @@ avantages · inconvénients) et **ma reco pour démarrer**.
 
 | Outil | 💶 | 🔓 | Notes |
 |---|---|---|---|
-| **Facturation gratuite FR** (ex. Henrri, Facture.net) | Gratuit/Freemium | ❌ Non | Devis/factures conformes, bien pour démarrer |
+| **Dolibarr** | Gratuit | ✅ Oui | ERP/CRM + **facturation** auto-hébergeable, **Factur-X natif** (voir note e-invoicing) |
+| **Odoo Community** | Gratuit | ✅ Oui | ERP complet open source (e-invoicing souvent en édition Enterprise) |
+| **Invoice Ninja** | Freemium | ✅ Oui | Facturation auto-hébergeable, e-invoicing/Factur-X via module |
+| **Facturation FR** (Henrri, Facture.net) | Gratuit/Freemium | ❌ Non | SaaS, simples pour démarrer |
 | **Pennylane / QuickBooks / Sellsy** | Payant | ❌ Non | Compta + facturation + lien expert-comptable |
 | **Un PSA** (Atera, Autotask…) | Payant | ❌ Non | Facturation **liée aux tickets/contrats** (voir §1 et §4) |
 
-> 🎯 **Pour démarrer** : un outil de **facturation gratuit** conforme, et un
-> **tableur** pour le suivi. Tu passeras à un PSA quand le volume le justifiera. (Pense à
-> l'**expert-comptable** : incontournable, et source de clients !)
+> 🎯 **Pour démarrer (open source)** : **Dolibarr** (que tu utilises déjà) reste le bon
+> choix — ERP + facturation, auto-hébergé, tes données chez toi.
+> 🧾 **Facture électronique** : conforme avec Dolibarr v19 + module eInvoicing + une
+> **Plateforme Agréée** — détails dans la [note de la stack souveraine](#-note--facture-électronique-réforme-fr-2026-2027).
+> 💡 Pense aussi à l'**expert-comptable** : incontournable, et source de clients !
 
 ---
 
@@ -473,6 +534,19 @@ monterais pour tes premiers clients :
 - PingCastle — https://www.pingcastle.com
 - Nessus Essentials — https://www.tenable.com/products/nessus/nessus-essentials
 - OpenVAS / Greenbone — https://www.greenbone.net
+
+### 🔓 Compléments open source (stack souveraine)
+- Proxmox Backup Server — https://www.proxmox.com/en/proxmox-backup-server
+- Bareos — https://www.bareos.org · Bacula — https://www.bacula.org
+- Kopia — https://kopia.io
+- ClamAV — https://www.clamav.net
+- Docmost — https://docmost.com
+- Firezone — https://www.firezone.dev
+- OPSI (gestion parc Windows) — https://www.opsi.org
+- FOG Project (imaging) — https://fogproject.org
+- Remmina (client RDP/VNC/SSH) — https://remmina.org
+- Dolibarr — https://www.dolibarr.org · Odoo Community — https://www.odoo.com/page/community
+- Invoice Ninja — https://www.invoiceninja.com
 
 ---
 
