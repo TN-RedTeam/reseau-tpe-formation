@@ -88,7 +88,7 @@ privilège — est identique partout.** Seul l'écran de réglage change selon l
 - 🐧 **Serveur Linux (Ubuntu) + postes Windows** : on installe **Samba** → le serveur Linux
   « parle » le protocole de partage de Windows (**SMB**). Les PC Windows accèdent alors à
   `\\serveur-linux\partage` **exactement pareil**. Les droits se règlent côté **Samba +
-  permissions Linux (`rwx`)** au lieu de NTFS (voir [admin 07](07-linux-serveur-bases.md) et
+  permissions Linux (`rwx`)** au lieu de NTFS (voir [admin 07](../07-linux-serveur-bases.md) et
   la [fiche partage multi-OS](../../fiches-memo/fiche-partage-multi-os.md)). 💡 D'ailleurs, un
   **NAS, c'est du Linux + Samba** sous le capot.
 
