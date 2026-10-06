@@ -22,6 +22,10 @@ flowchart TD
 
 ## 1. Créer une Unité d'Organisation (OU)
 
+> 📍 **Où ?** Sur le **serveur `SRV01`** (dans la fenêtre de ta VM) : **Gestionnaire de
+> serveur → menu Outils → « Utilisateurs et ordinateurs Active Directory »** (ou touche
+> Windows, tape `dsa.msc`, Entrée).
+
 1. Ouvre **Utilisateurs et ordinateurs Active Directory** (ADUC).
 2. Clic droit sur `labo.local` → **Nouveau → Unité d'organisation** → nomme-la **`Compta`**.
 
