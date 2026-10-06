@@ -41,36 +41,44 @@ avantages · inconvénients) et **ma reco pour démarrer**.
 
 ## 🔓 Priorité open source & auto-hébergé : la stack souveraine
 
-Si ta priorité est de **maîtriser tes données** (pas de SaaS où t'inscrire, pas de données
-qui fuient lors d'un hack chez l'éditeur), voici, catégorie par catégorie, le **meilleur
-équivalent open source que tu héberges toi-même**.
+Ce sont **TES outils de travail** d'infogéreur (ton **back-office** : gérer ton activité et
+tes clients), à mettre **au nom de ta société**. C'est **ici** que ta priorité « open source
++ auto-hébergé » prend tout son sens : **tes** données restent chez toi, rien chez un éditeur
+SaaS qui pourrait se faire pirater.
 
-| Besoin | 🔓 Open source auto-hébergeable | Remplace (SaaS/proprio) | Note (perf / complétude) |
+> 👉 À **ne pas confondre** avec les **logiciels déployés chez le client** (antivirus/EDR,
+> Microsoft 365, sauvegarde des données du client…). Ceux-là, tu choisis **le meilleur pour
+> lui** (souvent commercial) et tu les mets **au nom du client** →
+> [au nom de qui ?](../exploitation/06-gestion-acces-mots-de-passe.md#au-nom-de-qui--propriété-des-licences).
+
+> 💡 **Chaque outil ci-dessous est cliquable** : un clic = son **site officiel**.
+
+| Besoin (ton back-office) | 🔓 Outil open source auto-hébergeable | Remplace (SaaS/proprio) | Note |
 |---|---|---|---|
-| RMM | **Tactical RMM** | Atera, NinjaOne | Complet ; hébergement un peu technique |
-| Prise à distance | **MeshCentral**, **RustDesk** (relais perso), **Apache Guacamole** | AnyDesk, TeamViewer | Très bon ; Guacamole = RDP/SSH/VNC par navigateur |
-| Monitoring | **Zabbix** ou **Checkmk Raw** ; **Uptime Kuma** (simple) ; **Grafana+Prometheus** | PRTG | Excellents, matures |
-| Ticketing + inventaire | **GLPI** (+ agent) | Freshdesk, Autotask | Référence FR, très complet |
-| Sauvegarde | **UrBackup**, **Bareos/Bacula**, **Kopia/Restic/Borg** ; **Proxmox Backup Server** (VM) | Veeam | Solide ; ⚠️ voir sauvegarde **M365** ci-dessous |
-| Antivirus / EDR | ⚠️ **Defender** (intégré) + **Wazuh** (XDR/SIEM) | Bitdefender, ESET | **Point faible de l'OSS** — voir note |
-| Mots de passe | **Vaultwarden** (serveur Bitwarden perso) ; **KeePassXC** ; **Passbolt** | Bitwarden cloud, Keeper | ✅ Excellent, aucun compromis |
-| Documentation | **BookStack**, **Wiki.js**, **Docmost** ; **NetBox** (réseau) | Hudu, IT Glue | Très bon |
-| Virtualisation | **Proxmox VE** (+ **PBS** pour sauver les VM) | VMware | ✅ Référence, excellent |
-| VPN | **WireGuard**, **OpenVPN** ; **Headscale**, **Netbird**, **Firezone** (auto-hébergés) | Tailscale cloud | ✅ Excellent |
-| Diagnostic | **nmap, Wireshark, Angry IP Scanner, PuTTY, WinSCP, Remmina** | Advanced IP Scanner, MobaXterm | ✅ Déjà tout OSS |
-| Gestion M365 | **CIPP** (auto-hébergeable) | — | Catégorie liée à MS par nature |
-| Déploiement | **Ansible** ; **OPSI** (parc Windows) ; **FOG** (imaging) | PDQ | Puissant |
-| Facturation / gestion | **Dolibarr** (tu l'as déjà !), **Odoo Community**, **Invoice Ninja** | — | Voir note facture électronique |
+| RMM | [**Tactical RMM**](https://tacticalrmm.com) | Atera, NinjaOne | Complet ; hébergement un peu technique |
+| Prise à distance | [**MeshCentral**](https://meshcentral.com), [**RustDesk**](https://rustdesk.com), [**Guacamole**](https://guacamole.apache.org) | AnyDesk, TeamViewer | Guacamole = RDP/SSH/VNC par navigateur |
+| Monitoring | [**Zabbix**](https://www.zabbix.com) · [**Checkmk**](https://checkmk.com) · [**Uptime Kuma**](https://github.com/louislam/uptime-kuma) · [**Grafana**](https://grafana.com) | PRTG | Matures |
+| Ticketing + inventaire | [**GLPI**](https://glpi-project.org) (+ agent) | Freshdesk, Autotask | Référence FR, très complet |
+| Sauvegarde (tes outils) | [**UrBackup**](https://www.urbackup.org) · [**Bareos**](https://www.bareos.org) · [**Kopia**](https://kopia.io) · [**PBS**](https://www.proxmox.com/en/proxmox-backup-server) | Veeam | Solide (⚠️ sauvegarde M365 = côté client) |
+| Mots de passe | [**Vaultwarden**](https://github.com/dani-garcia/vaultwarden) · [**KeePassXC**](https://keepassxc.org) · [**Passbolt**](https://www.passbolt.com) | Bitwarden cloud, Keeper | ✅ Excellent, aucun compromis |
+| Documentation | [**BookStack**](https://www.bookstackapp.com) · [**Wiki.js**](https://js.wiki) · [**Docmost**](https://docmost.com) · [**NetBox**](https://netbox.dev) | Hudu, IT Glue | Très bon |
+| Virtualisation | [**Proxmox VE**](https://www.proxmox.com) | VMware | ✅ Référence |
+| VPN | [**WireGuard**](https://www.wireguard.com) · [**OpenVPN**](https://openvpn.net) · [**Headscale**](https://github.com/juanfont/headscale) · [**Netbird**](https://netbird.io) · [**Firezone**](https://www.firezone.dev) | Tailscale cloud | ✅ Excellent |
+| Diagnostic | [**nmap**](https://nmap.org) · [**Wireshark**](https://www.wireshark.org) · [**Angry IP**](https://angryip.org) · [**PuTTY**](https://www.chiark.greenend.org.uk/~sgtatham/putty/) · [**WinSCP**](https://winscp.net) · [**Remmina**](https://remmina.org) | Advanced IP Scanner, MobaXterm | ✅ Déjà tout OSS |
+| Gestion M365 (ton portail) | [**CIPP**](https://cipp.app) | — | Pour administrer les tenants clients |
+| Déploiement / auto | [**Ansible**](https://www.ansible.com) · [**OPSI**](https://www.opsi.org) · [**FOG**](https://fogproject.org) | PDQ | Puissant |
+| Facturation / gestion | [**Dolibarr**](https://www.dolibarr.org) (tu l'as déjà !) · [**Odoo Community**](https://www.odoo.com/page/community) · [**Invoice Ninja**](https://www.invoiceninja.com) | — | Voir note facture électronique |
 
-### ⚠️ Les 2 cas où l'open source est faible (honnêteté)
+### 🧑‍💼 Et les logiciels déployés CHEZ le client ?
 
-- **Antivirus / EDR** : il n'existe **pas** d'équivalent open source aussi efficace qu'un EDR
-  commercial sur Windows. Le pragmatique : **Microsoft Defender** (intégré, gratuit, piloté
-  par GPO/Intune) **+ Wazuh** (OSS) pour la **détection/journalisation** (FIM, alertes).
-  ClamAV (OSS) sert surtout au scan mail/fichiers, pas à la protection d'un poste moderne.
-- **Sauvegarde Microsoft 365** : l'offre OSS est **immature**. Si le client est sur M365, soit
-  tu acceptes une solution non-OSS dédiée, soit tu **rapatries** les données (ex. OneDrive/mails
-  exportés) dans ta sauvegarde OSS — moins automatique.
+Ce ne sont **pas** « tes outils » : tu choisis **le plus efficace pour le client** (souvent
+commercial, l'open source n'est pas le critère), et tu les mets **au nom du client** (toi, tu
+as l'accès admin — voir [au nom de qui ?](../exploitation/06-gestion-acces-mots-de-passe.md#au-nom-de-qui--propriété-des-licences)).
+
+- **Antivirus / EDR** : pas d'équivalent OSS aussi bon qu'un EDR commercial sur Windows →
+  **Microsoft Defender** (intégré, piloté par GPO/Intune) ± **Wazuh** (OSS, détection), ou une
+  solution commerciale (Bitdefender/ESET).
+- **Sauvegarde Microsoft 365** : offre OSS immature → solution dédiée (au nom du client).
 
 ### 🧾 Note — facture électronique (réforme FR 2026-2027)
 
