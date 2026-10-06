@@ -31,7 +31,8 @@ avantages · inconvénients) et **ma reco pour démarrer**.
 12. [Microsoft 365 / cloud (gestion MSP)](#12-microsoft-365--cloud-gestion-msp)
 13. [Déploiement & automatisation](#13-déploiement--automatisation)
 14. [Gestion de l'activité (devis, factures)](#14-gestion-de-lactivité-devis-factures)
-15. [🎒 La stack recommandée pour démarrer](#-la-stack-recommandée-pour-démarrer)
+15. [Audit & inventaire client (découverte du parc)](#15-audit--inventaire-client-découverte-du-parc)
+16. [🎒 La stack recommandée pour démarrer](#-la-stack-recommandée-pour-démarrer)
 
 ---
 
@@ -280,6 +281,56 @@ avantages · inconvénients) et **ma reco pour démarrer**.
 
 ---
 
+## 15. Audit & inventaire client (découverte du parc)
+
+*(Pour faire un audit **sérieux** — et pas « à la feuille » — qui scanne le parc
+automatiquement et sort un rapport pro. Lié au cours [infogérance 02 — l'audit](../infogerance/02-audit-client.md).)*
+
+### a) Scan réseau rapide (lister les appareils en 2 min, sur place)
+
+| Outil | 💶 | 🔓 | Pour quoi |
+|---|---|---|---|
+| **Fing** | Freemium | ❌ Non | Appli PC **et mobile** : liste tous les appareils (IP, MAC, fabricant). Rapide, rendu propre → impressionne en clientèle |
+| **Advanced IP Scanner** | Gratuit | ❌ Non | Windows, ultra simple, machines + partages |
+| **Angry IP Scanner / nmap** | Gratuit | ✅ Oui | Multi-plateforme, scan complet (ports, OS) |
+
+### b) Inventaire détaillé automatique (matériel + logiciels + rapport)
+
+| Outil | 💶 | 🔓 | Avantages | Inconvénients |
+|---|---|---|---|---|
+| **Lansweeper** | Freemium (gratuit ≤ ~100 appareils) | ❌ Non | Le plus « waouh » : scan sans agent, inventaire complet, **rapports pros** | Payant au-delà du quota |
+| **GLPI + agent GLPI** | Gratuit | ✅ Oui | Référence FR : inventaire auto **+ tickets** (deux besoins en un) | À héberger/configurer |
+| **OCS Inventory NG** | Gratuit | ✅ Oui | Inventaire auto, se marie avec GLPI | Interface datée |
+| **Spiceworks Inventory** | Gratuit | ❌ Non | Scan + rapports, facile, orienté PME | Financé par la pub |
+
+### c) Audit de sécurité (pour un rapport qui pèse)
+
+| Outil | 💶 | 🔓 | Pour quoi |
+|---|---|---|---|
+| **PingCastle** | Gratuit (éd. communautaire) | ❌ Non | **Audit Active Directory** → rapport **noté** (score de risque). PME avec domaine |
+| **Nessus Essentials** | Gratuit (≤ 16 IP) | ❌ Non | Scan de **vulnérabilités** → rapport détaillé |
+| **OpenVAS / Greenbone** | Gratuit | ✅ Oui | Alternative open source à Nessus |
+
+> ⚠️ Les seuils gratuits bougent (Lansweeper ~100 appareils, Nessus 16 IP…) → **vérifie la
+> limite à jour** avant une grosse mission.
+
+> 🎯 **Pour démarrer** :
+> - **TPE (audit ponctuel)** : **Fing**/Advanced IP Scanner (carte du réseau) + **Lansweeper
+>   gratuit** ou **GLPI** (inventaire + export PDF) → synthèse dans ton
+>   [rapport d'audit](../infogerance/modeles/modele-rapport-audit.md).
+> - **PME avec AD** : ajoute **PingCastle** (rapport sécurité noté, très pro).
+>
+> 💡 **Le combo gagnant** : scan auto (le **technique**) **+** la
+> [fiche d'audit](../infogerance/modeles/modele-fiche-audit.md) (l'**organisationnel** : qui
+> gère l'IT, sauvegardes testées ?, contrats, mots de passe par défaut…) → **un seul
+> rapport**. Les outils ne voient pas l'organisationnel ; la fiche n'est donc pas « pas
+> sérieux », c'est la moitié que les scanners ignorent.
+>
+> 🔁 Une fois le client **sous contrat**, ton **RMM** (§1) refait cet inventaire **en
+> continu, automatiquement** — plus besoin de rescanner à la main.
+
+---
+
 ## 🎒 La stack recommandée pour démarrer
 
 Si tu veux un **kit de départ cohérent, gratuit ou open source**, voici ce que je
@@ -287,6 +338,7 @@ monterais pour tes premiers clients :
 
 | Besoin | Outil de départ | Pourquoi |
 |---|---|---|
+| Audit / inventaire | **Fing** + **Lansweeper** (ou GLPI) | Scanner le parc + rapport pro (pas « à la feuille ») |
 | RMM / supervision | **TacticalRMM** ou **Action1** | Gérer le parc à distance, gratuitement |
 | Prise à distance | **RustDesk** | Gratuit, open source |
 | Monitoring simple | **Uptime Kuma** | 5 min à installer, suffit pour une TPE |
@@ -306,6 +358,121 @@ monterais pour tes premiers clients :
 
 > ⚠️ **Rappel RGPD** (cours 20) : pour chaque outil qui héberge des données clients,
 > vérifie **où** sont les données (UE de préférence) et **qui** y a accès.
+
+---
+
+## 🔗 Liens officiels des outils
+
+> ⚠️ Liens vérifiés à l'ajout ; un site peut changer d'adresse. En cas de lien mort,
+> cherche simplement le **nom de l'outil** dans un moteur de recherche. Télécharge
+> **toujours depuis le site officiel** (jamais un site tiers qui « reconditionne »).
+
+### 1. Supervision & RMM
+- Tactical RMM — https://tacticalrmm.com
+- Action1 — https://www.action1.com
+- Atera — https://www.atera.com
+- NinjaOne — https://www.ninjaone.com
+- Pulseway — https://www.pulseway.com
+- MeshCentral — https://meshcentral.com
+
+### 2. Prise en main à distance
+- RustDesk — https://rustdesk.com
+- MeshCentral — https://meshcentral.com
+- AnyDesk — https://anydesk.com
+- TeamViewer — https://www.teamviewer.com
+- Apache Guacamole — https://guacamole.apache.org
+
+### 3. Supervision d'infrastructure (monitoring)
+- Uptime Kuma — https://github.com/louislam/uptime-kuma
+- Zabbix — https://www.zabbix.com
+- Checkmk — https://checkmk.com
+- Grafana — https://grafana.com · Prometheus — https://prometheus.io
+- PRTG — https://www.paessler.com/prtg
+- LibreNMS — https://www.librenms.org · Nagios — https://www.nagios.org
+
+### 4. Ticketing / helpdesk / inventaire
+- GLPI — https://glpi-project.org
+- Zammad — https://zammad.org
+- osTicket — https://osticket.com
+- Freshdesk — https://www.freshworks.com/freshdesk
+- Autotask (Datto/Kaseya) — https://www.datto.com · ConnectWise — https://www.connectwise.com
+
+### 5. Sauvegarde
+- Veeam — https://www.veeam.com
+- Synology Active Backup — https://www.synology.com
+- UrBackup — https://www.urbackup.org
+- Restic — https://restic.net · BorgBackup — https://github.com/borgbackup/borg
+- Duplicati — https://www.duplicati.com
+- Afi (sauvegarde M365) — https://afi.ai
+
+### 6. Antivirus / EDR
+- Microsoft Defender — https://www.microsoft.com/security
+- Bitdefender GravityZone — https://www.bitdefender.com/business
+- ESET PROTECT — https://www.eset.com
+- Malwarebytes — https://www.malwarebytes.com
+- Wazuh — https://wazuh.com
+
+### 7. Gestionnaire de mots de passe
+- Bitwarden — https://bitwarden.com · Vaultwarden — https://github.com/dani-garcia/vaultwarden
+- KeePassXC — https://keepassxc.org
+- Keeper — https://www.keepersecurity.com · 1Password — https://1password.com
+- Passbolt — https://www.passbolt.com
+
+### 8. Documentation & inventaire IT
+- BookStack — https://www.bookstackapp.com
+- Wiki.js — https://js.wiki
+- NetBox — https://netbox.dev
+- Hudu — https://www.hudu.com · IT Glue — https://www.itglue.com
+
+### 9. Virtualisation
+- Proxmox VE — https://www.proxmox.com
+- VirtualBox — https://www.virtualbox.org
+- Hyper-V — https://learn.microsoft.com/windows-server/virtualization/hyper-v/
+- VMware (Broadcom) — https://www.vmware.com
+
+### 10. VPN / accès distant sécurisé
+- WireGuard — https://www.wireguard.com
+- Tailscale — https://tailscale.com
+- Netbird — https://netbird.io · Headscale — https://github.com/juanfont/headscale
+- OpenVPN — https://openvpn.net
+
+### 11. Outils réseau & diagnostic
+- Nmap / Zenmap — https://nmap.org
+- Angry IP Scanner — https://angryip.org
+- Wireshark — https://www.wireshark.org
+- Advanced IP Scanner — https://www.advanced-ip-scanner.com
+- MobaXterm — https://mobaxterm.mobatek.net
+- PuTTY — https://www.chiark.greenend.org.uk/~sgtatham/putty/
+- WinSCP — https://winscp.net · Termius — https://termius.com
+
+### 12. Microsoft 365 / cloud (gestion MSP)
+- Centre d'admin M365 — https://admin.microsoft.com
+- Microsoft Partner Center — https://partner.microsoft.com
+- CIPP — https://cipp.app
+
+### 13. Déploiement & automatisation
+- Chocolatey — https://chocolatey.org
+- PDQ Deploy & Inventory — https://www.pdq.com
+- Ansible — https://www.ansible.com
+- PowerShell — https://learn.microsoft.com/powershell
+
+### 14. Gestion de l'activité (devis, factures)
+- Henrri — https://www.henrri.com
+- Facture.net — https://www.facture.net
+- Pennylane — https://www.pennylane.com
+- QuickBooks — https://quickbooks.intuit.com
+- Sellsy — https://www.sellsy.com
+
+### 15. Audit & inventaire client
+- Fing — https://www.fing.com
+- Advanced IP Scanner — https://www.advanced-ip-scanner.com
+- Angry IP Scanner — https://angryip.org · Nmap — https://nmap.org
+- Lansweeper — https://www.lansweeper.com
+- GLPI — https://glpi-project.org · OCS Inventory NG — https://ocsinventory-ng.org
+- Spiceworks Inventory — https://www.spiceworks.com
+- PingCastle — https://www.pingcastle.com
+- Nessus Essentials — https://www.tenable.com/products/nessus/nessus-essentials
+- OpenVAS / Greenbone — https://www.greenbone.net
 
 ---
 

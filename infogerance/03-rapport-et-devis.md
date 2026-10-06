@@ -17,6 +17,10 @@ d'audit, c'est pareil : traduire la technique en **langage de patron**, puis chi
 Règle d'or : **le patron doit tout comprendre sans toi.** Utilise le
 [modèle de rapport](modeles/modele-rapport-audit.md). Structure gagnante :
 
+> 🧰 **Gagne du temps** : les outils d'audit (Lansweeper, GLPI, PingCastle…) **exportent
+> déjà un rapport technique**. Tu n'as plus qu'à en tirer la **synthèse en langage client**
+> et l'intégrer. Voir [outils → Audit & inventaire client](../outils/#15-audit--inventaire-client-découverte-du-parc).
+
 1. **Synthèse en 1 page** : les 3-4 risques majeurs en 🔴, en français simple.
    - ❌ « Le NAS n'a pas de réplication off-site »
    - ✅ « Aucune copie de vos données hors du bureau : en cas d'incendie ou de vol,
