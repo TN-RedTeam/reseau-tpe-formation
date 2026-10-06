@@ -54,10 +54,27 @@ flowchart LR
 
 ## 4. Tester l'accès
 
-1. Connecte-toi (sur le serveur ou une VM poste) en tant que **`alice.martin`** (membre de
-   `GG_Compta`).
-2. Dans l'explorateur, tape `\\SRV01\Compta` : tu dois **pouvoir créer un fichier**. ✅
-3. Connecte-toi avec un utilisateur **non membre** → l'accès doit être **refusé**. ✅
+> ⚠️ **Ne te connecte PAS en tant qu'`alice.martin` directement sur le serveur !** SRV01 est
+> un **contrôleur de domaine** : Windows **interdit par défaut** à un utilisateur standard d'y
+> ouvrir une session (message « *La méthode de connexion… n'est pas autorisée* »). C'est
+> **normal** — les utilisateurs se connectent sur les **postes**, jamais sur le serveur.
+
+**Option A — la façon propre (réaliste)** : depuis un **poste client** :
+1. Crée une petite VM **Windows 10/11** sur le **même réseau LAB**.
+2. **Joins-la au domaine** `labo.local` (`sysdm.cpl` → Modifier → Domaine `labo.local`, avec
+   un compte admin du domaine).
+3. **Ouvre une session `alice.martin` sur ce poste**, tape `\\SRV01\Compta` → crée un fichier. ✅
+
+**Option B — la façon rapide (sans créer de poste)** : depuis le serveur, on s'authentifie
+comme alice **sans ouvrir de session**, en ligne de commande :
+```
+net use \\SRV01\Compta /user:labo\alice.martin
+```
+→ saisis le mot de passe d'alice, puis ouvre `\\SRV01\Compta` et **essaie de créer un
+fichier** (tu agis en tant qu'alice). Pour terminer : `net use \\SRV01\Compta /delete`.
+
+Dans les deux cas, refais le test avec un **compte non membre** de `GG_Compta` → l'accès doit
+être **refusé**. ✅
 
 > 💡 Si le résultat te surprend, souviens-toi : **partage + NTFS se combinent, le plus
 > restrictif gagne** (admin 06). Et vérifie l'**héritage** (bouton Avancé).
