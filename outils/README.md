@@ -34,6 +34,70 @@ avantages · inconvénients) et **ma reco pour démarrer**.
 15. [Audit & inventaire client (découverte du parc)](#15-audit--inventaire-client-découverte-du-parc)
 16. [🎒 La stack recommandée pour démarrer](#-la-stack-recommandée-pour-démarrer)
 
+> 🔓 **Tu veux du 100 % open source & auto-hébergé ?** → va directement à la
+> [**stack souveraine**](#-priorité-open-source--auto-hébergé-la-stack-souveraine).
+
+---
+
+## 🔓 Priorité open source & auto-hébergé : la stack souveraine
+
+Ce sont **TES outils de travail** d'infogéreur (ton **back-office** : gérer ton activité et
+tes clients), à mettre **au nom de ta société**. C'est **ici** que ta priorité « open source
++ auto-hébergé » prend tout son sens : **tes** données restent chez toi, rien chez un éditeur
+SaaS qui pourrait se faire pirater.
+
+> 👉 À **ne pas confondre** avec les **logiciels déployés chez le client** (antivirus/EDR,
+> Microsoft 365, sauvegarde des données du client…). Ceux-là, tu choisis **le meilleur pour
+> lui** (souvent commercial) et tu les mets **au nom du client** →
+> [au nom de qui ?](../exploitation/06-gestion-acces-mots-de-passe.md#au-nom-de-qui--propriété-des-licences).
+
+> 💡 **Chaque outil ci-dessous est cliquable** : un clic = son **site officiel**.
+
+| Besoin (ton back-office) | 🔓 Outil open source auto-hébergeable | Remplace (SaaS/proprio) | Note |
+|---|---|---|---|
+| RMM | [**Tactical RMM**](https://tacticalrmm.com) | Atera, NinjaOne | Complet ; hébergement un peu technique |
+| Prise à distance | [**MeshCentral**](https://meshcentral.com), [**RustDesk**](https://rustdesk.com), [**Guacamole**](https://guacamole.apache.org) | AnyDesk, TeamViewer | Guacamole = RDP/SSH/VNC par navigateur |
+| Monitoring | [**Zabbix**](https://www.zabbix.com) · [**Checkmk**](https://checkmk.com) · [**Uptime Kuma**](https://github.com/louislam/uptime-kuma) · [**Grafana**](https://grafana.com) | PRTG | Matures |
+| Ticketing + inventaire | [**GLPI**](https://glpi-project.org) (+ agent) | Freshdesk, Autotask | Référence FR, très complet |
+| Sauvegarde (tes outils) | [**UrBackup**](https://www.urbackup.org) · [**Bareos**](https://www.bareos.org) · [**Kopia**](https://kopia.io) · [**PBS**](https://www.proxmox.com/en/proxmox-backup-server) | Veeam | Solide (⚠️ sauvegarde M365 = côté client) |
+| Mots de passe | [**Vaultwarden**](https://github.com/dani-garcia/vaultwarden) · [**KeePassXC**](https://keepassxc.org) · [**Passbolt**](https://www.passbolt.com) | Bitwarden cloud, Keeper | ✅ Excellent, aucun compromis |
+| Documentation | [**BookStack**](https://www.bookstackapp.com) · [**Wiki.js**](https://js.wiki) · [**Docmost**](https://docmost.com) · [**NetBox**](https://netbox.dev) | Hudu, IT Glue | Très bon |
+| Virtualisation | [**Proxmox VE**](https://www.proxmox.com) | VMware | ✅ Référence |
+| VPN | [**WireGuard**](https://www.wireguard.com) · [**OpenVPN**](https://openvpn.net) · [**Headscale**](https://github.com/juanfont/headscale) · [**Netbird**](https://netbird.io) · [**Firezone**](https://www.firezone.dev) | Tailscale cloud | ✅ Excellent |
+| Diagnostic | [**nmap**](https://nmap.org) · [**Wireshark**](https://www.wireshark.org) · [**Angry IP**](https://angryip.org) · [**PuTTY**](https://www.chiark.greenend.org.uk/~sgtatham/putty/) · [**WinSCP**](https://winscp.net) · [**Remmina**](https://remmina.org) | Advanced IP Scanner, MobaXterm | ✅ Déjà tout OSS |
+| Gestion M365 (ton portail) | [**CIPP**](https://cipp.app) | — | Pour administrer les tenants clients |
+| Déploiement / auto | [**Ansible**](https://www.ansible.com) · [**OPSI**](https://www.opsi.org) · [**FOG**](https://fogproject.org) | PDQ | Puissant |
+| Facturation / gestion | [**Dolibarr**](https://www.dolibarr.org) (tu l'as déjà !) · [**Odoo Community**](https://www.odoo.com/page/community) · [**Invoice Ninja**](https://www.invoiceninja.com) | — | Voir note facture électronique |
+
+### 🧑‍💼 Et les logiciels déployés CHEZ le client ?
+
+Ce ne sont **pas** « tes outils » : tu choisis **le plus efficace pour le client** (souvent
+commercial, l'open source n'est pas le critère), et tu les mets **au nom du client** (toi, tu
+as l'accès admin — voir [au nom de qui ?](../exploitation/06-gestion-acces-mots-de-passe.md#au-nom-de-qui--propriété-des-licences)).
+
+- **Antivirus / EDR** : pas d'équivalent OSS aussi bon qu'un EDR commercial sur Windows →
+  **Microsoft Defender** (intégré, piloté par GPO/Intune) ± **Wazuh** (OSS, détection), ou une
+  solution commerciale (Bitdefender/ESET).
+- **Sauvegarde Microsoft 365** : offre OSS immature → solution dédiée (au nom du client).
+
+### 🧾 Note — facture électronique (réforme FR 2026-2027)
+
+- Réception obligatoire pour **toutes** les entreprises : **1ᵉʳ sept. 2026** ; émission
+  **TPE/PME** : **1ᵉʳ sept. 2027**. Format **structuré** (Factur-X / UBL / CII) + passage par
+  une **Plateforme Agréée (PA)** (ex-« PDP »).
+- **Dolibarr reste conforme** : Factur-X natif, **module eInvoicing gratuit** (DoliStore),
+  **v17 minimum (v19 recommandée)**, à **connecter à une Plateforme Agréée**. → Pas besoin de
+  changer d'outil, juste de le mettre à jour et de le brancher à une PA.
+- ⚠️ Réglementation **mouvante** : vérifie dates et terminologie sur **impots.gouv.fr**.
+
+### ⚖️ Le vrai compromis de l'auto-hébergement
+
+Tout héberger toi-même = **souveraineté** totale… mais **tu deviens responsable** de
+l'hébergement, des **mises à jour**, de la **sécurité** et de la **sauvegarde** de ces outils.
+C'est une charge réelle. Bon équilibre pragmatique : auto-héberge en priorité ce qui contient
+les **données sensibles** (mots de passe → Vaultwarden, doc, sauvegardes), et accepte un outil
+clé-en-main là où l'OSS est faible (EDR).
+
 ---
 
 ## 1. Supervision & RMM
@@ -271,13 +335,18 @@ avantages · inconvénients) et **ma reco pour démarrer**.
 
 | Outil | 💶 | 🔓 | Notes |
 |---|---|---|---|
-| **Facturation gratuite FR** (ex. Henrri, Facture.net) | Gratuit/Freemium | ❌ Non | Devis/factures conformes, bien pour démarrer |
+| **Dolibarr** | Gratuit | ✅ Oui | ERP/CRM + **facturation** auto-hébergeable, **Factur-X natif** (voir note e-invoicing) |
+| **Odoo Community** | Gratuit | ✅ Oui | ERP complet open source (e-invoicing souvent en édition Enterprise) |
+| **Invoice Ninja** | Freemium | ✅ Oui | Facturation auto-hébergeable, e-invoicing/Factur-X via module |
+| **Facturation FR** (Henrri, Facture.net) | Gratuit/Freemium | ❌ Non | SaaS, simples pour démarrer |
 | **Pennylane / QuickBooks / Sellsy** | Payant | ❌ Non | Compta + facturation + lien expert-comptable |
 | **Un PSA** (Atera, Autotask…) | Payant | ❌ Non | Facturation **liée aux tickets/contrats** (voir §1 et §4) |
 
-> 🎯 **Pour démarrer** : un outil de **facturation gratuit** conforme, et un
-> **tableur** pour le suivi. Tu passeras à un PSA quand le volume le justifiera. (Pense à
-> l'**expert-comptable** : incontournable, et source de clients !)
+> 🎯 **Pour démarrer (open source)** : **Dolibarr** (que tu utilises déjà) reste le bon
+> choix — ERP + facturation, auto-hébergé, tes données chez toi.
+> 🧾 **Facture électronique** : conforme avec Dolibarr v19 + module eInvoicing + une
+> **Plateforme Agréée** — détails dans la [note de la stack souveraine](#-note--facture-électronique-réforme-fr-2026-2027).
+> 💡 Pense aussi à l'**expert-comptable** : incontournable, et source de clients !
 
 ---
 
@@ -473,6 +542,19 @@ monterais pour tes premiers clients :
 - PingCastle — https://www.pingcastle.com
 - Nessus Essentials — https://www.tenable.com/products/nessus/nessus-essentials
 - OpenVAS / Greenbone — https://www.greenbone.net
+
+### 🔓 Compléments open source (stack souveraine)
+- Proxmox Backup Server — https://www.proxmox.com/en/proxmox-backup-server
+- Bareos — https://www.bareos.org · Bacula — https://www.bacula.org
+- Kopia — https://kopia.io
+- ClamAV — https://www.clamav.net
+- Docmost — https://docmost.com
+- Firezone — https://www.firezone.dev
+- OPSI (gestion parc Windows) — https://www.opsi.org
+- FOG Project (imaging) — https://fogproject.org
+- Remmina (client RDP/VNC/SSH) — https://remmina.org
+- Dolibarr — https://www.dolibarr.org · Odoo Community — https://www.odoo.com/page/community
+- Invoice Ninja — https://www.invoiceninja.com
 
 ---
 

@@ -43,6 +43,11 @@ ton coffre — voir exploitation/06) :
 > ⚠️ Un client qui ne retrouve pas ses accès, c'est fréquent. Note ce qui manque : le
 > récupérer fait **partie de l'onboarding**.
 
+> 🏷️ **Au nom de qui ?** Les comptes, licences, le **domaine** et le **tenant M365** doivent
+> être **au nom du client** (toi = accès admin), jamais sur ton compte perso. Profite de
+> l'onboarding pour **corriger** ceux qui seraient mal déclarés. Détails :
+> [exploitation 06 — au nom de qui ?](../exploitation/06-gestion-acces-mots-de-passe.md#au-nom-de-qui--propriété-des-licences).
+
 ---
 
 ## 📂 2. Constituer le dossier client
