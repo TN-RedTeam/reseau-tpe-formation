@@ -31,6 +31,11 @@ ce bilan, impossible de proposer un bon « traitement » (ni un bon prix).
 Utilise la [fiche d'audit](modeles/modele-fiche-audit.md) pour tout cocher. Les
 domaines :
 
+> 🧰 **Pour un audit pro (pas « à la feuille »)** : des outils **gratuits** scannent le
+> parc automatiquement et sortent un **rapport** (Fing, Lansweeper, GLPI, PingCastle…).
+> Voir [outils → Audit & inventaire client](../outils/#15-audit--inventaire-client-découverte-du-parc).
+> Le combo gagnant = **scan auto** (le technique) **+** cette fiche (l'organisationnel).
+
 ```mermaid
 mindmap
   root((Audit IT))

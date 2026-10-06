@@ -31,7 +31,8 @@ avantages · inconvénients) et **ma reco pour démarrer**.
 12. [Microsoft 365 / cloud (gestion MSP)](#12-microsoft-365--cloud-gestion-msp)
 13. [Déploiement & automatisation](#13-déploiement--automatisation)
 14. [Gestion de l'activité (devis, factures)](#14-gestion-de-lactivité-devis-factures)
-15. [🎒 La stack recommandée pour démarrer](#-la-stack-recommandée-pour-démarrer)
+15. [Audit & inventaire client (découverte du parc)](#15-audit--inventaire-client-découverte-du-parc)
+16. [🎒 La stack recommandée pour démarrer](#-la-stack-recommandée-pour-démarrer)
 
 ---
 
@@ -280,6 +281,56 @@ avantages · inconvénients) et **ma reco pour démarrer**.
 
 ---
 
+## 15. Audit & inventaire client (découverte du parc)
+
+*(Pour faire un audit **sérieux** — et pas « à la feuille » — qui scanne le parc
+automatiquement et sort un rapport pro. Lié au cours [infogérance 02 — l'audit](../infogerance/02-audit-client.md).)*
+
+### a) Scan réseau rapide (lister les appareils en 2 min, sur place)
+
+| Outil | 💶 | 🔓 | Pour quoi |
+|---|---|---|---|
+| **Fing** | Freemium | ❌ Non | Appli PC **et mobile** : liste tous les appareils (IP, MAC, fabricant). Rapide, rendu propre → impressionne en clientèle |
+| **Advanced IP Scanner** | Gratuit | ❌ Non | Windows, ultra simple, machines + partages |
+| **Angry IP Scanner / nmap** | Gratuit | ✅ Oui | Multi-plateforme, scan complet (ports, OS) |
+
+### b) Inventaire détaillé automatique (matériel + logiciels + rapport)
+
+| Outil | 💶 | 🔓 | Avantages | Inconvénients |
+|---|---|---|---|---|
+| **Lansweeper** | Freemium (gratuit ≤ ~100 appareils) | ❌ Non | Le plus « waouh » : scan sans agent, inventaire complet, **rapports pros** | Payant au-delà du quota |
+| **GLPI + agent GLPI** | Gratuit | ✅ Oui | Référence FR : inventaire auto **+ tickets** (deux besoins en un) | À héberger/configurer |
+| **OCS Inventory NG** | Gratuit | ✅ Oui | Inventaire auto, se marie avec GLPI | Interface datée |
+| **Spiceworks Inventory** | Gratuit | ❌ Non | Scan + rapports, facile, orienté PME | Financé par la pub |
+
+### c) Audit de sécurité (pour un rapport qui pèse)
+
+| Outil | 💶 | 🔓 | Pour quoi |
+|---|---|---|---|
+| **PingCastle** | Gratuit (éd. communautaire) | ❌ Non | **Audit Active Directory** → rapport **noté** (score de risque). PME avec domaine |
+| **Nessus Essentials** | Gratuit (≤ 16 IP) | ❌ Non | Scan de **vulnérabilités** → rapport détaillé |
+| **OpenVAS / Greenbone** | Gratuit | ✅ Oui | Alternative open source à Nessus |
+
+> ⚠️ Les seuils gratuits bougent (Lansweeper ~100 appareils, Nessus 16 IP…) → **vérifie la
+> limite à jour** avant une grosse mission.
+
+> 🎯 **Pour démarrer** :
+> - **TPE (audit ponctuel)** : **Fing**/Advanced IP Scanner (carte du réseau) + **Lansweeper
+>   gratuit** ou **GLPI** (inventaire + export PDF) → synthèse dans ton
+>   [rapport d'audit](../infogerance/modeles/modele-rapport-audit.md).
+> - **PME avec AD** : ajoute **PingCastle** (rapport sécurité noté, très pro).
+>
+> 💡 **Le combo gagnant** : scan auto (le **technique**) **+** la
+> [fiche d'audit](../infogerance/modeles/modele-fiche-audit.md) (l'**organisationnel** : qui
+> gère l'IT, sauvegardes testées ?, contrats, mots de passe par défaut…) → **un seul
+> rapport**. Les outils ne voient pas l'organisationnel ; la fiche n'est donc pas « pas
+> sérieux », c'est la moitié que les scanners ignorent.
+>
+> 🔁 Une fois le client **sous contrat**, ton **RMM** (§1) refait cet inventaire **en
+> continu, automatiquement** — plus besoin de rescanner à la main.
+
+---
+
 ## 🎒 La stack recommandée pour démarrer
 
 Si tu veux un **kit de départ cohérent, gratuit ou open source**, voici ce que je
@@ -287,6 +338,7 @@ monterais pour tes premiers clients :
 
 | Besoin | Outil de départ | Pourquoi |
 |---|---|---|
+| Audit / inventaire | **Fing** + **Lansweeper** (ou GLPI) | Scanner le parc + rapport pro (pas « à la feuille ») |
 | RMM / supervision | **TacticalRMM** ou **Action1** | Gérer le parc à distance, gratuitement |
 | Prise à distance | **RustDesk** | Gratuit, open source |
 | Monitoring simple | **Uptime Kuma** | 5 min à installer, suffit pour une TPE |
